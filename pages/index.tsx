@@ -1,21 +1,14 @@
 import React, { useState } from "react";
-import Container from "@material-ui/core/Container";
 import Layout from "../src/Layout";
-import { Autocomplete } from "@material-ui/lab";
-import { TextField } from "@material-ui/core";
+import CardSearch from "../src/Search";
 
 export default function Index() {
-  const [cardOptions, setCardOptions] = useState([]);
+  const [cardList, setCardList] = useState([]);
 
   return (
     <Layout>
       {/* search */}
-      <Autocomplete
-        options={cardOptions}
-        renderInput={(params) => {
-          return <TextField {...params} label='Card name' margin='dense' />;
-        }}
-      />
+      <CardSearch />
 
       {/* cards */}
       <div>Cards placeholder</div>

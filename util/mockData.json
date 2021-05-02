@@ -1,0 +1,1288 @@
+{
+  "Path to Exile": [
+    {
+      "colorIdentity": ["W"],
+      "colors": ["W"],
+      "convertedManaCost": 1.0,
+      "edhrecRank": 41,
+      "foreignData": [
+        {
+          "language": "German",
+          "name": "Weg ins Exil",
+          "text": "Schicke eine Kreatur deiner Wahl ins Exil. Ihr Beherrscher kann seine Bibliothek nach einem Standardland durchsuchen, dieses getappt ins Spiel bringen und dann seine Bibliothek mischen.",
+          "type": "Spontanzauber"
+        },
+        {
+          "language": "Spanish",
+          "name": "Camino al exilio",
+          "text": "Exilia la criatura objetivo. Su controlador puede buscar en su biblioteca una carta de tierra básica, ponerla en el campo de batalla girada y luego barajar su biblioteca.",
+          "type": "Instantáneo"
+        },
+        {
+          "language": "French",
+          "name": "Chemin vers l'exil",
+          "text": "Exilez la créature ciblée. Son contrôleur peut chercher dans sa bibliothèque une carte de terrain de base, la mettre sur le champ de bataille engagée et mélanger ensuite sa bibliothèque.",
+          "type": "Éphémère"
+        },
+        {
+          "language": "Italian",
+          "name": "Sentiero dell'Esilio",
+          "text": "Esilia una creatura bersaglio. Il suo controllore può passare in rassegna il suo grimorio per una carta terra base, metterla nel campo di battaglia TAPpata, poi rimescolare il suo grimorio.",
+          "type": "Istantaneo"
+        },
+        {
+          "language": "Japanese",
+          "name": "流刑への道",
+          "text": "クリーチャー１体を対象とし、それを追放する。 それのコントローラーは自分のライブラリーから基本土地カードを１枚探してもよい。そうしたなら、そのプレイヤーはそのカードをタップ状態で戦場に出し、自分のライブラリーを切り直す。",
+          "type": "インスタント"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "d683d985-9888-4d21-8b5f-69e69ce4a03b"
+      },
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{W}",
+      "name": "Path to Exile",
+      "printings": [
+        "2XM",
+        "ARC",
+        "CMA",
+        "CMD",
+        "CON",
+        "DDI",
+        "E02",
+        "F15",
+        "JMP",
+        "MB1",
+        "MD1",
+        "MM3",
+        "MMA",
+        "PF20",
+        "PRM",
+        "PWP09",
+        "SS2",
+        "TSR"
+      ],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/899789095bd07b63",
+        "cardKingdomFoil": "https://mtgjson.com/links/ec1ea4f6d772b50c",
+        "cardmarket": "https://mtgjson.com/links/d6c10cb09fedc0e4",
+        "tcgplayer": "https://mtgjson.com/links/0a5d5f11b98d46ac"
+      },
+      "rulings": [
+        {
+          "date": "2021-03-19",
+          "text": "If the target creature is an illegal target by the time Path to Exile tries to resolve, the spell won’t resolve. The creature’s controller won’t search for a basic land card."
+        },
+        {
+          "date": "2021-03-19",
+          "text": "The controller of the exiled creature isn’t required to search their library for a basic land. If that player doesn’t, the player won’t shuffle their library."
+        }
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "text": "Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+      "type": "Instant",
+      "types": ["Instant"]
+    }
+  ],
+  "Path to the World Tree": [
+    {
+      "colorIdentity": ["B", "G", "R", "U", "W"],
+      "colors": ["G"],
+      "convertedManaCost": 2.0,
+      "edhrecRank": 13876,
+      "foreignData": [
+        {
+          "language": "German",
+          "name": "Pfad zum Weltenbaum",
+          "text": "Wenn der Pfad zum Weltenbaum ins Spiel kommt, durchsuche deine Bibliothek nach einer Standardland-Karte, zeige sie offen vor, nimm sie auf deine Hand und mische dann deine Bibliothek.\n{2}{W}{U}{B}{R}{G}, opfere den Pfad zum Weltenbaum: Du erhältst 2 Lebenspunkte dazu und ziehst zwei Karten. Ein Gegner deiner Wahl verliert 2 Lebenspunkte. Der Pfad zum Weltenbaum fügt bis zu einer Kreatur deiner Wahl 2 Schadenspunkte zu. Du erzeugst einen 2/2 grünen Bär-Kreaturenspielstein.",
+          "type": "Verzauberung"
+        },
+        {
+          "language": "Spanish",
+          "name": "Camino al Árbol del Mundo",
+          "text": "Cuando el Camino al Árbol del Mundo entre al campo de batalla, busca en tu biblioteca una carta de tierra básica, muéstrala, ponla en tu mano y luego baraja tu biblioteca.\n{2}{W}{U}{B}{R}{G}, sacrificar el Camino al Árbol del Mundo: Ganas 2 vidas y robas dos cartas. El oponente objetivo pierde 2 vidas. El Camino al Árbol del Mundo hace 2 puntos de daño a hasta una criatura objetivo. Creas una ficha de criatura Oso verde 2/2.",
+          "type": "Encantamiento"
+        },
+        {
+          "language": "French",
+          "name": "Passage vers l'Arbre-monde",
+          "text": "Quand le Passage vers l'Arbre-monde arrive sur le champ de bataille, cherchez dans votre bibliothèque une carte de terrain de base, révélez-la, mettez-la dans votre main et mélangez ensuite votre bibliothèque.\n{2}{W}{U}{B}{R}{G}, sacrifiez le Passage vers l'Arbre-monde : Vous gagnez 2 points de vie et piochez deux cartes. Un adversaire ciblé perd 2 points de vie. Le Passage vers l'Arbre-monde inflige 2 blessures à jusqu'à une créature ciblée. Vous créez un jeton de créature 2/2 verte Ours.",
+          "type": "Enchantement"
+        },
+        {
+          "language": "Italian",
+          "name": "Via per l'Albero del Mondo",
+          "text": "Quando la Via per l'Albero del Mondo entra nel campo di battaglia, passa in rassegna il tuo grimorio per una carta terra base, rivelala, aggiungila alla tua mano, poi rimescola il tuo grimorio.\n{2}{W}{U}{B}{R}{G}, Sacrifica la Via per l'Albero del Mondo: Guadagni 2 punti vita e peschi due carte. Un avversario bersaglio perde 2 punti vita. Scegli fino a una creatura bersaglio. La Via per l'Albero del Mondo le infligge 2 danni. Crea una pedina creatura Orso 2/2 verde.",
+          "type": "Incantesimo"
+        },
+        {
+          "language": "Japanese",
+          "name": "世界樹への道",
+          "text": "世界樹への道が戦場に出たとき、あなたのライブラリーから基本土地・カード１枚を探し、公開し、あなたの手札に加える。その後、あなたのライブラリーを切り直す。\n{2}{W}{U}{B}{R}{G}, 世界樹への道を生け贄に捧げる：対戦相手１人とクリーチャー最大１体を対象とする。あなたは２点のライフを得てカード２枚を引く。そのプレイヤーは２点のライフを失う。世界樹への道はそのクリーチャーに２点のダメージを与える。あなたは緑の２/２の熊・クリーチャー・トークン１体を生成する。",
+          "type": "エンチャント"
+        },
+        {
+          "language": "Korean",
+          "name": "세계수로 향하는 길",
+          "text": "세계수로 향하는 길이 전장에 들어올 때, 당신의 서고에서 기본 대지 카드 한 장을 찾아, 공개하고, 당신의 손으로 가져간 후, 당신의 서고를 섞는다.\n{2}{W}{U}{B}{R}{G}, 세계수로 향하는 길을 희생한다: 당신은 생명 2점을 얻고 카드 두 장을 뽑는다. 상대를 목표로 정한다. 그 상대는 생명 2점을 잃는다. 생물을 최대 한 개까지 목표로 정한다. 세계수로 향하는 길은 그 생물에게 피해 2점을 입힌다. 당신은 2/2 녹색 곰 생물 토큰 한 개를 만든다.",
+          "type": "부여마법"
+        },
+        {
+          "language": "Portuguese (Brazil)",
+          "name": "Trilha para a Árvore-mundo",
+          "text": "Quando Trilha para a Árvore-mundo entrar no campo de batalha, procure um card de terreno básico em seu grimório, revele-o, coloque-o na sua mão e depois embaralhe seu grimório.\n{2}{W}{U}{B}{R}{G}, sacrifique Trilha para a Árvore-mundo: Você ganha 2 pontos de vida e compra dois cards. O oponente alvo perde 2 pontos de vida. Trilha para a Árvore-mundo causa 2 pontos de dano a até uma criatura alvo. Crie uma ficha de criatura Urso verde 2/2.",
+          "type": "Encantamento"
+        },
+        {
+          "language": "Russian",
+          "name": "Путь к Мировому Древу",
+          "text": "Когда Путь к Мировому Древу выходит на поле битвы, найдите в вашей библиотеке карту базовой земли, покажите ее, положите ее в вашу руку, затем перетасуйте вашу библиотеку.\n{2}{W}{U}{B}{R}{G}, пожертвуйте Путь к Мировому Древу: вы получаете 2 жизни и берете две карты. Целевой оппонент теряет 2 жизни. Путь к Мировому Древу наносит 2 повреждения не более чем одному целевому существу. Вы создаете одну фишку существа 2/2 зеленый Медведь.",
+          "type": "Чары"
+        },
+        {
+          "language": "Chinese Simplified",
+          "name": "世界树径路",
+          "text": "当世界树径路进战场时，从你的牌库中搜寻一张基本地牌，展示该牌，将它置于你手上，然后将你的牌库洗牌。\n{2}{W}{U}{B}{R}{G}，牺牲世界树径路：你获得2点生命且抓两张牌。目标对手失去2点生命。世界树径路对至多一个目标生物造成2点伤害。你派出一个2/2绿色的熊衍生生物。",
+          "type": "结界"
+        },
+        {
+          "language": "Chinese Traditional",
+          "name": "世界樹徑路",
+          "text": "當世界樹徑路進戰場時，從你的牌庫中搜尋一張基本地牌，展示該牌，將它置於你手上，然後將你的牌庫洗牌。\n{2}{W}{U}{B}{R}{G}，犧牲世界樹徑路：你獲得2點生命且抽兩張牌。目標對手失去2點生命。世界樹徑路對至多一個目標生物造成2點傷害。你派出一個2/2綠色的熊衍生生物。",
+          "type": "結界"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "a933f443-dd53-4805-8446-72693a27cb56"
+      },
+      "layout": "normal",
+      "legalities": {
+        "brawl": "Legal",
+        "commander": "Legal",
+        "duel": "Legal",
+        "future": "Legal",
+        "gladiator": "Legal",
+        "historic": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "penny": "Legal",
+        "pioneer": "Legal",
+        "standard": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{1}{G}",
+      "name": "Path to the World Tree",
+      "printings": ["KHM"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/03a3edf5f410bece",
+        "cardKingdomFoil": "https://mtgjson.com/links/68aceeeb0a072d36",
+        "cardmarket": "https://mtgjson.com/links/daa6d1008ecfa984",
+        "tcgplayer": "https://mtgjson.com/links/485a2f537f5fea8e"
+      },
+      "rulings": [
+        {
+          "date": "2021-02-05",
+          "text": "The last ability of Path to the World Tree always targets an opponent and may target a creature. As the ability tries to resolve, if all its targets are illegal, the ability won’t resolve and none of its effects will happen. You won’t do any of the cool stuff that ability tells you to do."
+        }
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "text": "When Path to the World Tree enters the battlefield, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{2}{W}{U}{B}{R}{G}, Sacrifice Path to the World Tree: You gain 2 life and draw two cards. Target opponent loses 2 life. Path to the World Tree deals 2 damage to up to one target creature. You create a 2/2 green Bear creature token.",
+      "type": "Enchantment",
+      "types": ["Enchantment"]
+    }
+  ],
+  "Pathbreaker Ibex": [
+    {
+      "colorIdentity": ["G"],
+      "colors": ["G"],
+      "convertedManaCost": 6.0,
+      "edhrecRank": 1519,
+      "foreignData": [
+        {
+          "flavorText": "„Mein Können ist hier verschwendet.\"—Juruk, kalonischer Spurensucher",
+          "language": "German",
+          "name": "Pfadbrecher-Steinbock",
+          "text": "Immer wenn der Pfadbrecher-Steinbock angreift, verursachen Kreaturen, die du kontrollierst, Trampelschaden und erhalten +X/+X bis zum Ende des Zuges, wobei X gleich der höchsten Stärke unter den Kreaturen ist, die du kontrollierst.",
+          "type": "Kreatur — Ziege"
+        },
+        {
+          "flavorText": "\"Aquí no hacen ninguna falta mis habilidades\".—Juruk, rastreador kaloniano",
+          "language": "Spanish",
+          "name": "Íbice abrecaminos",
+          "text": "Siempre que el Íbice abrecaminos ataque, las criaturas que controlas ganan la habilidad de arrollar y obtienen +X/+X hasta el final del turno, donde X es la mayor fuerza entre las criaturas que controlas.",
+          "type": "Criatura — Cabra"
+        },
+        {
+          "flavorText": "« Mes talents sont gâchés ici. »—Juruk, traqueur kalonien",
+          "language": "French",
+          "name": "Bouquetin défricheur",
+          "text": "À chaque fois que le Bouquetin défricheur attaque, les créatures que vous contrôlez acquièrent le piétinement et gagnent +X/+X jusqu'à la fin du tour, X étant la force la plus élevée parmi les créatures que vous contrôlez.",
+          "type": "Créature : chèvre"
+        },
+        {
+          "flavorText": "\"Il mio talento qui è sprecato.\"—Juruk, battipista di Kalonia",
+          "language": "Italian",
+          "name": "Stambecco Sfondapista",
+          "text": "Ogniqualvolta lo Stambecco Sfondapista attacca, le creature che controlli hanno travolgere e prendono +X/+X fino alla fine del turno, dove X è la forza maggiore tra le creature che controlli.",
+          "type": "Creatura — Capra"
+        },
+        {
+          "flavorText": "「ここでは、俺の腕も宝の持ち腐れだな。」――カロニアの追跡者、ジュラク",
+          "language": "Japanese",
+          "name": "草分けるアイベックス",
+          "text": "草分けるアイベックスが攻撃するたび、ターン終了時まで、あなたがコントロールするクリーチャーはトランプルを得るとともに＋Ｘ/＋Ｘの修整を受ける。Ｘはあなたがコントロールするクリーチャーの中のパワーの最大値に等しい。",
+          "type": "クリーチャー — ヤギ"
+        },
+        {
+          "flavorText": "「我的技能在这里毫无用处。」～卡隆尼亚追猎人裘鲁",
+          "language": "Chinese Simplified",
+          "name": "辟路原羊",
+          "text": "每当辟路原羊攻击时，直到回合结束，由你操控的生物获得践踏异能且得+X/+X，X为由你操控的生物中力量最大者的数值。",
+          "type": "生物～山羊"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "7e52e91b-70e6-4f26-a5d4-b8e33d1debbf"
+      },
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{4}{G}{G}",
+      "name": "Pathbreaker Ibex",
+      "power": "3",
+      "printings": ["C15", "CMA", "PZ1"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/46d0348ceb23e82c",
+        "cardmarket": "https://mtgjson.com/links/d546af3514def9ec",
+        "tcgplayer": "https://mtgjson.com/links/9ea45771e7c8e2e7"
+      },
+      "rulings": [
+        {
+          "date": "2015-11-04",
+          "text": "The value of X is calculated as Pathbreaker Ibex’s ability resolves. Notably, if you attack with two Pathbreaker Ibex (and control no other creatures), the first ability to resolve will give those Ibex +3/+3. The second ability will then give them +6/+6."
+        },
+        {
+          "date": "2017-07-14",
+          "text": "If this creature’s power is negative as its ability resolves, X is considered to be 0. (This is a change from previous rulings.)"
+        }
+      ],
+      "subtypes": ["Goat"],
+      "supertypes": [],
+      "text": "Whenever Pathbreaker Ibex attacks, creatures you control gain trample and get +X/+X until end of turn, where X is the greatest power among creatures you control.",
+      "toughness": "3",
+      "type": "Creature — Goat",
+      "types": ["Creature"]
+    }
+  ],
+  "Pathbreaker Wurm": [
+    {
+      "colorIdentity": ["G"],
+      "colors": ["G"],
+      "convertedManaCost": 6.0,
+      "edhrecRank": 12115,
+      "foreignData": [
+        {
+          "language": "German",
+          "name": "Bahnbrecherwurm",
+          "text": "Seelengebunden (Du kannst diese Kreatur an eine andere nicht gebundene Kreatur binden, wenn eine von beiden ins Spiel kommt. Sie bleiben verbunden, solange du die Kontrolle über beide Kreaturen hast.)\nSolange der Bahnbrecherwurm an eine andere Kreatur gebunden ist, verursachen beide Kreaturen Trampelschaden.",
+          "type": "Kreatur — Wurm"
+        },
+        {
+          "language": "Spanish",
+          "name": "Sierpe rompesenderos",
+          "text": "Unir almas. (Puedes emparejar esta criatura con otra criatura no emparejada cuando cualquiera de ellas entre al campo de batalla. Permanecen emparejadas mientras controles ambas criaturas.)\nMientras la Sierpe rompesenderos esté emparejada con otra criatura, ambas criaturas tienen la habilidad de arrollar.",
+          "type": "Criatura — Sierpe"
+        },
+        {
+          "language": "French",
+          "name": "Guivre défricheuse",
+          "text": "Association d'âmes (Vous pouvez associer cette créature à une autre créature dissociée quand l'une d'elles arrive sur le champ de bataille. Elles restent associées tant que vous les contrôlez toutes les deux.)\nTant que la Guivre défricheuse est associée à une autre créature, les deux créatures ont le piétinement.",
+          "type": "Créature : guivre"
+        },
+        {
+          "language": "Italian",
+          "name": "Wurm Sfondapista",
+          "text": "Unione d'anime (Puoi abbinare questa creatura a un'altra creatura non abbinata quando una delle due entra nel campo di battaglia. Restano abbinate fintanto che le controlli entrambe.)\nFintanto che il Wurm Sfondapista è abbinato a un'altra creatura, entrambe le creature hanno travolgere.",
+          "type": "Creatura — Wurm"
+        },
+        {
+          "language": "Japanese",
+          "name": "道壊しワーム",
+          "text": "結魂 （このクリーチャーか他のまだ組になっていないクリーチャーが戦場に出たとき、あなたはそれらを組にしてもよい。 それらのクリーチャーは、あなたがその両方をコントロールし続けるかぎり組である。）\n道壊しワームが他のクリーチャーと組になっているかぎり、両方のクリーチャーはトランプルを持つ。",
+          "type": "クリーチャー — ワーム"
+        },
+        {
+          "language": "Korean",
+          "name": "파괴개척자 웜",
+          "text": "영혼결속 (이 생물이 전장에 들어올 때, 당신은 이 생물을 짝이 없는 생물과 짝지을 수 있다. 그 생물들은 당신이 두 생물 모두를 조종하는 한 짝으로 남는다.)\n파괴개척자 웜이 다른 생물과 짝을 이루는 한, 두 생물 모두 돌진 능력을 가진다.",
+          "type": "생물 — 웜"
+        },
+        {
+          "language": "Portuguese (Brazil)",
+          "name": "Vorme Rompe-trilha",
+          "text": "Elo espiritual (Você pode emparelhar esta criatura com outra criatura não emparelhada quando uma delas entrar no campo de batalha. Elas permanecem emparelhadas enquanto você controlar ambas.)\nEnquanto Vorme Rompe-trilha estiver emparelhado com outra criatura, ambas as criaturas terão atropelar.",
+          "type": "Criatura — Vorme"
+        },
+        {
+          "language": "Russian",
+          "name": "Вурм-Землепроходец",
+          "text": "Духовная связь (Вы можете образовать пару между этим существом и другим существом без пары, когда одно из них выходит на поле битвы. Они остаются в паре, пока оба находятся под вашим контролем.)\nПока Вурм-Землепроходец находится в паре с другим существом, оба существа имеют Пробивной удар.",
+          "type": "Существо — Вурм"
+        },
+        {
+          "language": "Chinese Simplified",
+          "name": "辟路亚龙",
+          "text": "魂系 （你可以将此生物与另一未搭档生物在它们任一进战场时组搭档。 只要你操控它们，此两者便持续搭档。）\n只要辟路亚龙与另一生物搭档，此两者便具有践踏异能。",
+          "type": "生物～亚龙"
+        },
+        {
+          "language": "Chinese Traditional",
+          "name": "闢路亞龍",
+          "text": "魂繫 （你可以將此生物與另一未搭檔生物在它們任一進戰場時組搭檔。 只要你操控它們，此兩者便持續搭檔。）\n只要闢路亞龍與另一生物搭檔，此兩者便具有踐踏異能。",
+          "type": "生物～亞龍"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "ab342d57-240a-4c56-aed6-ac3cdc51af8d"
+      },
+      "keywords": ["Soulbond"],
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "pauper": "Legal",
+        "penny": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{4}{G}{G}",
+      "name": "Pathbreaker Wurm",
+      "power": "6",
+      "printings": ["AVR"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/59e1ecfca6a86ac6",
+        "cardKingdomFoil": "https://mtgjson.com/links/fb3094d58cb39e35",
+        "cardmarket": "https://mtgjson.com/links/ddb09104f33726fd",
+        "tcgplayer": "https://mtgjson.com/links/a585702a0f207d03"
+      },
+      "rulings": [],
+      "subtypes": ["Wurm"],
+      "supertypes": [],
+      "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Pathbreaker Wurm is paired with another creature, both creatures have trample.",
+      "toughness": "4",
+      "type": "Creature — Wurm",
+      "types": ["Creature"]
+    }
+  ],
+  "Pathmaker Initiate": [
+    {
+      "colorIdentity": ["R"],
+      "colors": ["R"],
+      "convertedManaCost": 2.0,
+      "edhrecRank": 12967,
+      "foreignData": [
+        {
+          "flavorText": "„Der normale Weg durch die Prüfungen ist mir viel zu anstrengend.\"",
+          "language": "German",
+          "name": "Pfadbringer-Geweihter",
+          "text": "{T}: Eine Kreatur deiner Wahl mit Stärke 2 oder weniger kann in diesem Zug nicht geblockt werden.",
+          "type": "Kreatur — Mensch, Zauberer"
+        },
+        {
+          "flavorText": "\"El camino que se supone que hay que seguir para superar la prueba es demasiado tedioso\".",
+          "language": "Spanish",
+          "name": "Iniciada abresendas",
+          "text": "{T}: La criatura objetivo con fuerza de 2 o menos no puede ser bloqueada este turno.",
+          "type": "Criatura — Hechicero humano"
+        },
+        {
+          "flavorText": "« Le chemin prévu pour traverser les épreuves est bien trop pénible. »",
+          "language": "French",
+          "name": "Adepte ouvrevoie",
+          "text": "{T} : La créature ciblée de force inférieure ou égale à 2 ne peut pas être bloquée ce tour-ci.",
+          "type": "Créature : humain et sorcier"
+        },
+        {
+          "flavorText": "\"Il percorso previsto per affrontare l'ordalia è decisamente monotono.\"",
+          "language": "Italian",
+          "name": "Iniziata Aprivarchi",
+          "text": "{T}: Una creatura bersaglio con forza pari o inferiore a 2 non può essere bloccata in questo turno.",
+          "type": "Creatura — Mago Umano"
+        },
+        {
+          "flavorText": "「予定通りの試練の道など退屈で仕方ない。」",
+          "language": "Japanese",
+          "name": "道拓きの修練者",
+          "text": "{T}：パワーが２以下のクリーチャー１体を対象とする。このターン、それはブロックされない。",
+          "type": "クリーチャー — 人間・ウィザード"
+        },
+        {
+          "flavorText": "\"시험 통과를 위해 예측된 길은 너무나 지루하다.\"",
+          "language": "Korean",
+          "name": "경로창조자 입회자",
+          "text": "{T}: 공격력이 2 이하인 생물을 목표로 정한다. 이번 턴에 그 생물은 방어될 수 없다.",
+          "type": "생물 — 인간 마법사"
+        },
+        {
+          "flavorText": "\"O caminho previsível para superar a prova é tedioso demais.\"",
+          "language": "Portuguese (Brazil)",
+          "name": "Iniciada Abre-estrada",
+          "text": "{T}: A criatura alvo com poder igual ou inferior a 2 não pode ser bloqueada neste turno.",
+          "type": "Criatura — Humano Mago"
+        },
+        {
+          "flavorText": "«Обычный путь через испытания слишком уж утомителен».",
+          "language": "Russian",
+          "name": "Прокладывающая Путь Послушница",
+          "text": "{T}: целевое существо с силой 2 или меньше не может быть заблокировано в этом ходу.",
+          "type": "Существо — Человек Чародей"
+        },
+        {
+          "flavorText": "「闯通祀炼的寻常道路太过无趣。」",
+          "language": "Chinese Simplified",
+          "name": "开路祀徒",
+          "text": "{T}：目标力量等于或小于2的生物本回合不能被阻挡。",
+          "type": "生物～人类／法术师"
+        },
+        {
+          "flavorText": "「闖通祀煉的尋常道路太過無趣。」",
+          "language": "Chinese Traditional",
+          "name": "開路祀徒",
+          "text": "{T}：目標力量等於或小於2的生物本回合不能被阻擋。",
+          "type": "生物～人類／魔法師"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "c0247a19-9c8f-422c-88cf-9f298c3a8c96"
+      },
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "gladiator": "Legal",
+        "historic": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "pauper": "Legal",
+        "pioneer": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{1}{R}",
+      "name": "Pathmaker Initiate",
+      "power": "2",
+      "printings": ["AKH", "AKR", "BBD"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/1b31100ffd021996",
+        "cardKingdomFoil": "https://mtgjson.com/links/e2301d28a406b07a",
+        "cardmarket": "https://mtgjson.com/links/bd6523c24d48108e",
+        "tcgplayer": "https://mtgjson.com/links/73339d7a7d41419a"
+      },
+      "rulings": [
+        {
+          "date": "2017-04-18",
+          "text": "If the creature’s power is greater than 2 as the activated ability tries to resolve, the ability won’t resolve and none of its effects will happen. However, if instead the creature’s power is raised above 2 after the ability resolves, it still can’t be blocked that turn."
+        }
+      ],
+      "subtypes": ["Human", "Wizard"],
+      "supertypes": [],
+      "text": "{T}: Target creature with power 2 or less can't be blocked this turn.",
+      "toughness": "1",
+      "type": "Creature — Human Wizard",
+      "types": ["Creature"]
+    }
+  ],
+  "Pathrazer of Ulamog": [
+    {
+      "colorIdentity": [],
+      "colors": [],
+      "convertedManaCost": 11.0,
+      "edhrecRank": 1548,
+      "foreignData": [
+        {
+          "flavorText": "Keine Gedanken außer an Hunger. Keine Strategie außer Zerstörung.",
+          "language": "German",
+          "name": "Ulamogs Wegbereiter",
+          "text": "Vernichter 3 (Immer wenn diese Kreatur angreift, opfert der verteidigende Spieler drei bleibende Karten.)\nUlamogs Wegbereiter kann nicht geblockt werden, außer von drei oder mehr Kreaturen.",
+          "type": "Kreatur — Eldrazi"
+        },
+        {
+          "flavorText": "No piensa, devora. No planea, destruye.",
+          "language": "Spanish",
+          "name": "Arrasacaminos de Ulamog",
+          "text": "Aniquilador 3. (Siempre que esta criatura ataque, el jugador defensor sacrifica tres permanentes.)\nEl Arrasacaminos de Ulamog no puede ser bloqueado excepto por tres o más criaturas.",
+          "type": "Criatura — Eldrazi"
+        },
+        {
+          "flavorText": "La faim comme seule pensée. La destruction comme seule stratégie.",
+          "language": "French",
+          "name": "Terrasseur d'Ulamog",
+          "text": "Annihilateur 3 (À chaque fois que cette créature attaque, le joueur défenseur sacrifie trois permanents.)\nLe Terrasseur d'Ulamog ne peut pas être bloqué excepté par trois créatures ou plus.",
+          "type": "Créature : eldrazi"
+        },
+        {
+          "flavorText": "Nessun pensiero, se non la fame. Nessuna strategia, se non la distruzione.",
+          "language": "Italian",
+          "name": "Spianasentieri di Ulamog",
+          "text": "Annientatore 3 (Ogniqualvolta questa creatura attacca, il giocatore in difesa sacrifica tre permanenti.)\nLo Spianasentieri di Ulamog non può essere bloccato tranne che da tre o più creature.",
+          "type": "Creatura — Eldrazi"
+        },
+        {
+          "flavorText": "飢餓以外に思想無し。 破壊以外に戦略無し。",
+          "language": "Japanese",
+          "name": "ウラモグの道滅ぼし",
+          "text": "滅殺 ３ （このクリーチャーが攻撃するたび、防御プレイヤーはパーマネントを３つ生け贄に捧げる。）\nウラモグの道滅ぼしは３体以上のクリーチャーによってしかブロックされない。",
+          "type": "クリーチャー — エルドラージ"
+        },
+        {
+          "flavorText": "Nenhum pensamento, só fome. Nenhuma estratégia, só destruição.",
+          "language": "Portuguese (Brazil)",
+          "name": "Raspa-Trilha de Ulamog",
+          "text": "Aniquilador 3 (Toda vez que esta criatura ataca, o jogador defensor sacrifica três permanentes.)\nRaspa-Trilha de Ulamog só pode ser bloqueado por três ou mais criaturas.",
+          "type": "Criatura — Eldrazi"
+        },
+        {
+          "flavorText": "Одна лишь мысль — голод. Одна стратегия — разрушение.",
+          "language": "Russian",
+          "name": "Прокладыватель Пути Уламога",
+          "text": "Аннигилятор 3 (Каждый раз когда это существо атакует, защищающийся игрок приносит в жертву три перманента.)\nПрокладыватель Пути Уламога не может быть заблокирован менее чем тремя существами.",
+          "type": "Существо — Эльдрази"
+        },
+        {
+          "flavorText": "没有思想，只知饥渴。 没有计谋，只会破坏。",
+          "language": "Chinese Simplified",
+          "name": "钨拉莫夷径者",
+          "text": "歼灭3 （每当此生物攻击时，防御牌手牺牲三个永久物。）\n钨拉莫夷径者只能被三个或更多生物阻挡。",
+          "type": "生物～奥札奇"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "4bf95747-4572-49b8-b892-87fe7f910252"
+      },
+      "keywords": ["Annihilator"],
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "penny": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{11}",
+      "name": "Pathrazer of Ulamog",
+      "power": "9",
+      "printings": ["MB1", "PRM", "PWP10", "ROE"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/5255b31fa77103cf",
+        "cardKingdomFoil": "https://mtgjson.com/links/63447f478e5d7aae",
+        "cardmarket": "https://mtgjson.com/links/1ac4d6de9cf70e84",
+        "tcgplayer": "https://mtgjson.com/links/a33298395bf8e90a"
+      },
+      "rulings": [
+        {
+          "date": "2010-06-15",
+          "text": "Annihilator abilities trigger and resolve during the declare attackers step. The defending player chooses and sacrifices the required number of permanents before they declare blockers. Any creatures sacrificed this way won’t be able to block."
+        },
+        {
+          "date": "2010-06-15",
+          "text": "If a creature with annihilator is attacking a planeswalker, and the defending player chooses to sacrifice that planeswalker, the attacking creature continues to attack. It may be blocked. If it isn’t blocked, it simply won’t deal combat damage to anything."
+        }
+      ],
+      "subtypes": ["Eldrazi"],
+      "supertypes": [],
+      "text": "Annihilator 3 (Whenever this creature attacks, defending player sacrifices three permanents.)\nPathrazer of Ulamog can't be blocked except by three or more creatures.",
+      "toughness": "9",
+      "type": "Creature — Eldrazi",
+      "types": ["Creature"]
+    }
+  ],
+  "Pathway Arrows": [
+    {
+      "colorIdentity": [],
+      "colors": [],
+      "convertedManaCost": 1.0,
+      "edhrecRank": 9626,
+      "foreignData": [
+        {
+          "flavorText": "Auch als „Leitende Steine\" bezeichnet, können Scherben von Polyedern Eldrazi bei Kontakt lähmen.",
+          "language": "German",
+          "name": "Leitende Pfeile",
+          "text": "Die ausgerüstete Kreatur hat „{2}, {T}: Diese Kreatur fügt einer Kreatur deiner Wahl 1 Schadenspunkt zu. Falls einer farblosen Kreatur auf diese Weise Schaden zugefügt wird, tappe sie.\"Ausrüsten {2}",
+          "type": "Artefakt — Ausrüstung"
+        },
+        {
+          "flavorText": "Los fragmentos de edro, también llamados \"piedras de la senda\", pueden inmovilizar a los Eldrazi al tocarlos.",
+          "language": "Spanish",
+          "name": "Flechas de la senda",
+          "text": "La criatura equipada tiene \"{2}, {T}: Esta criatura hace 1 punto de daño a la criatura objetivo. Si una criatura incolora recibe daño de esta manera, gírala\".Equipar {2}.",
+          "type": "Artefacto — Equipo"
+        },
+        {
+          "flavorText": "Les éclats d'hèdrons, aussi appelés « pierres de passage », peuvent immobiliser les Eldrazi au contact.",
+          "language": "French",
+          "name": "Flèches de passage",
+          "text": "La créature équipée a « {2}, {T} : Cette créature inflige 1 blessure à la créature ciblée. Si une créature incolore subit des blessures de cette manière, engagez-la. »Équipement {2}",
+          "type": "Artefact : équipement"
+        },
+        {
+          "flavorText": "Chiamati anche \"pietre del cammino\", i frammenti di edro possono immobilizzare gli Eldrazi al solo contatto.",
+          "language": "Italian",
+          "name": "Frecce del Cammino",
+          "text": "La creatura equipaggiata ha \"{2}, {T}: Questa creatura infligge 1 danno a una creatura bersaglio. Se è stato inflitto danno a una creatura incolore in questo modo, TAPpala\".Equipaggiare {2}",
+          "type": "Artefatto — Equipaggiamento"
+        },
+        {
+          "flavorText": "「突き抜けの石」とも呼ばれる面晶体の断片には、それに接触したエルドラージの動きを止める働きがある。",
+          "language": "Japanese",
+          "name": "突き抜けの矢",
+          "text": "装備しているクリーチャーは「{2}, {T}：クリーチャー１体を対象とする。このクリーチャーはそれに１点のダメージを与える。無色のクリーチャーがこれによりダメージを与えられたなら、それをタップする。」を持つ。装備{2}",
+          "type": "アーティファクト — 装備品"
+        },
+        {
+          "flavorText": "\"통로 보석\"이라고도 부르는 다면체 파편이 엘드라지 몸에 닿으면 엘드라지가 무력화된다.",
+          "language": "Korean",
+          "name": "통로 화살",
+          "text": "장착된 생물은 \"{2}, {T}: 생물을 목표로 정한다. 이 생물은 그 목표에게 피해 1점을 입힌다. 무색 생물이 이렇게 피해를 입으면 그 무색 생물을 탭한다.\"를 가진다.장착 {2}",
+          "type": "마법물체 — 장비"
+        },
+        {
+          "flavorText": "Também chamados de \"pedras das trilhas\", os fragmentos de edros conseguem imobilizar os Eldrazi ao contato.",
+          "language": "Portuguese (Brazil)",
+          "name": "Flechas da Trilha",
+          "text": "A criatura equipada tem \"{2}, {T}: Esta criatura causa 1 ponto de dano à criatura alvo. Se uma criatura incolor sofreu dano dessa forma, vire-a.\"Equipar {2}",
+          "type": "Artefato — Equipamento"
+        },
+        {
+          "flavorText": "Осколки эдров, которые также называют «путеводными камнями», при касании обездвиживают Эльдрази.",
+          "language": "Russian",
+          "name": "Путеводные Стрелы",
+          "text": "Снаряженное существо имеет способность «{2}, {T}: это существо наносит 1 повреждение целевому существу. Если таким образом наносятся повреждения бесцветному существу, поверните его».Снарядить {2}",
+          "type": "Артефакт — Снаряжение"
+        },
+        {
+          "flavorText": "晶石的碎片亦称「开道石」，它接触到奥札奇后能让其无法动弹。",
+          "language": "Chinese Simplified",
+          "name": "开道箭",
+          "text": "佩带此武具的生物具有「{2}，{T}：此生物对目标生物造成1点伤害。如果无色生物以此法受到伤害，将它横置。」佩带{2}",
+          "type": "神器～武具"
+        },
+        {
+          "flavorText": "晶石的碎片亦稱「開道石」，它接觸到奧札奇後能讓其無法動彈。",
+          "language": "Chinese Traditional",
+          "name": "開道箭",
+          "text": "佩帶此武具的生物具有「{2}，{T}：此生物對目標生物造成1點傷害。如果無色生物以此法受到傷害，將它橫置。」佩帶{2}",
+          "type": "神器～武具"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "cb15bcc7-151f-44a4-90ee-2d39d8fd5299"
+      },
+      "keywords": ["Equip"],
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "penny": "Legal",
+        "pioneer": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{1}",
+      "name": "Pathway Arrows",
+      "printings": ["BFZ"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/cd5100933267ab58",
+        "cardKingdomFoil": "https://mtgjson.com/links/5ae25355abe8bd46",
+        "cardmarket": "https://mtgjson.com/links/99b591279bcdd064",
+        "tcgplayer": "https://mtgjson.com/links/fa940502eb5569f9"
+      },
+      "rulings": [],
+      "subtypes": ["Equipment"],
+      "supertypes": [],
+      "text": "Equipped creature has \"{2}, {T}: This creature deals 1 damage to target creature. If a colorless creature is dealt damage this way, tap it.\"\nEquip {2}",
+      "type": "Artifact — Equipment",
+      "types": ["Artifact"]
+    }
+  ],
+  "Patient Rebuilding": [
+    {
+      "colorIdentity": ["U"],
+      "colors": ["U"],
+      "convertedManaCost": 5.0,
+      "edhrecRank": 3534,
+      "foreignData": [
+        {
+          "flavorText": "Nicol Bolas wird nicht ruhen, bis er seine einstige Macht wiedererlangt hat.",
+          "language": "German",
+          "name": "Geduldiger Wiederaufbau",
+          "text": "Zu Beginn deines Versorgungssegments legt ein Gegner deiner Wahl die obersten drei Karten seiner Bibliothek auf seinen Friedhof. Dann ziehst du für jedes Land, das auf diese Weise auf jenen Friedhof gelegt wurde, eine Karte.",
+          "type": "Verzauberung"
+        },
+        {
+          "flavorText": "Nicol Bolas no descansó hasta regresar a su antigua gloria.",
+          "language": "Spanish",
+          "name": "Reconstrucción paciente",
+          "text": "Al comienzo de tu mantenimiento, el oponente objetivo pone las tres primeras cartas de su biblioteca en su cementerio. Luego, robas una carta por cada carta de tierra que vaya al cementerio de esta manera.",
+          "type": "Encantamiento"
+        },
+        {
+          "flavorText": "Nicol Bolas ne connaîtrait le repos qu'une fois sa gloire passée retrouvée.",
+          "language": "French",
+          "name": "Reconstruction patiente",
+          "text": "Au début de votre entretien, l'adversaire ciblé met les trois cartes du dessus de sa bibliothèque dans son cimetière, puis vous piochez une carte pour chaque carte de terrain mise dans ce cimetière de cette manière.",
+          "type": "Enchantement"
+        },
+        {
+          "flavorText": "Nicol Bolas avrebbe trovato riposo solo dopo aver ripristinato il suo antico splendore.",
+          "language": "Italian",
+          "name": "Ricostruzione Paziente",
+          "text": "All'inizio del tuo mantenimento, un avversario bersaglio mette nel suo cimitero le prime tre carte del suo grimorio, poi tu peschi una carta per ogni carta terra messa in quel cimitero in questo modo.",
+          "type": "Incantesimo"
+        },
+        {
+          "flavorText": "かつての栄光を取り戻すまでニコル・ボーラスに休息はない。",
+          "language": "Japanese",
+          "name": "悠長な再構築",
+          "text": "あなたのアップキープの開始時に、対戦相手１人を対象とする。そのプレイヤーは、自分のライブラリーの一番上からカードを３枚自分の墓地に置く。その後あなたはこれにより墓地に置かれた土地・カード１枚につきカードを１枚引く。",
+          "type": "エンチャント"
+        },
+        {
+          "flavorText": "니콜 볼라스는 자신의 옛 영광을 되찾을 때까지 쉬지 않을 것이다.",
+          "language": "Korean",
+          "name": "끈기 있는 재건",
+          "text": "당신의 유지단 시작에, 상대를 목표로 정한다. 그 플레이어는 자신의 서고 맨 위 카드 세 장을 자신의 무덤에 넣고, 당신은 이런 식으로 무덤에 놓인 대지 카드 한 장당 카드 한 장을 뽑는다.",
+          "type": "부여마법"
+        },
+        {
+          "flavorText": "Nicol Bolas não descansaria até recuperar a antiga glória.",
+          "language": "Portuguese (Brazil)",
+          "name": "Reconstrução Paciente",
+          "text": "No início de sua manutenção, o oponente alvo coloca os três cards do topo do próprio grimório no próprio cemitério. Em seguida, você compra um card para cada card de terreno colocado no cemitério dessa forma.",
+          "type": "Encantamento"
+        },
+        {
+          "flavorText": "Никол Болас не мог успокоиться, пока не вернул себе былое могущество.",
+          "language": "Russian",
+          "name": "Терпеливое Восстановление",
+          "text": "В начале вашего шага поддержки целевой оппонент кладет три верхние карты своей библиотеки на свое кладбище, затем вы берете одну карту за каждую карту земли, положенную на то кладбище таким образом.",
+          "type": "Чары"
+        },
+        {
+          "flavorText": "不重振昔日雄风，尼可波拉斯誓不罢休。",
+          "language": "Chinese Simplified",
+          "name": "耐心复原",
+          "text": "在你的维持开始时，目标对手将其牌库顶的三张牌置入其坟墓场，然后每以此法将一张地牌置入该坟墓场，你便抓一张牌。",
+          "type": "结界"
+        },
+        {
+          "flavorText": "不重振昔日雄風，尼可波拉斯誓不罷休。",
+          "language": "Chinese Traditional",
+          "name": "耐心復原",
+          "text": "在你的維持開始時，目標對手將其牌庫頂的三張牌置入其墳墓場，然後每以此法將一張地牌置入該墳墓場，你便抽一張牌。",
+          "type": "結界"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "df9fe645-6f7b-44a0-ab69-b68cb7e525cd"
+      },
+      "keywords": ["Mill"],
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "gladiator": "Legal",
+        "historic": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "penny": "Legal",
+        "pioneer": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{3}{U}{U}",
+      "name": "Patient Rebuilding",
+      "printings": ["M19", "PM19"],
+      "purchaseUrls": {
+        "cardKingdomFoil": "https://mtgjson.com/links/d01b904f0e92176b",
+        "tcgplayer": "https://mtgjson.com/links/142e268120014faf"
+      },
+      "rulings": [
+        {
+          "date": "2018-07-13",
+          "text": "Each time Patient Rebuilding’s triggered ability resolves, it counts only the land cards put into that graveyard during that ability’s resolution. For example, if your opponent puts two land cards into their graveyard during one upkeep and three land cards the next, you’ll draw two and three cards, respectively, not two and five."
+        },
+        {
+          "date": "2018-07-13",
+          "text": "If your opponent moves cards from their library but they aren’t put into their graveyard (perhaps because you control Rest in Peace), you won’t draw any cards."
+        }
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "text": "At the beginning of your upkeep, target opponent mills three cards, then you draw a card for each land card put into their graveyard this way.",
+      "type": "Enchantment",
+      "types": ["Enchantment"]
+    }
+  ],
+  "Patient Turtle": [
+    {
+      "colorIdentity": ["G"],
+      "colors": ["G"],
+      "convertedManaCost": 4.0,
+      "foreignData": [],
+      "identifiers": {
+        "scryfallOracleId": "01851796-44f3-47ee-b00b-f65e0ab97493"
+      },
+      "layout": "normal",
+      "legalities": {},
+      "manaCost": "{2}{G}{G}",
+      "name": "Patient Turtle",
+      "power": "3",
+      "printings": ["CMB1"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/f2fb0a144d791170",
+        "tcgplayer": "https://mtgjson.com/links/75fccc3202e3bc80"
+      },
+      "rulings": [],
+      "subtypes": ["Turtle"],
+      "supertypes": [],
+      "text": "Patient Turtle enters the battlefield with two +1/+1 counters on it if you didn't go first this game.",
+      "toughness": "3",
+      "type": "Creature — Turtle",
+      "types": ["Creature"]
+    }
+  ],
+  "Patriarch's Bidding": [
+    {
+      "colorIdentity": ["B"],
+      "colors": ["B"],
+      "convertedManaCost": 5.0,
+      "edhrecRank": 2291,
+      "foreignData": [
+        {
+          "flavorText": "„Es ist bequem, wenn alles in der Familie bleibt.\" —Patriarch der Kabbalisten",
+          "language": "German",
+          "name": "Gebot des Patriarchen",
+          "text": "Jeder Spieler bestimmt einen Kreaturentyp. Jeder Spieler bringt alle Kreaturenkarten, die mindestens einen der so bestimmten Kreaturentypen haben, aus seinem Friedhof ins Spiel zurück.",
+          "type": "Hexerei"
+        },
+        {
+          "flavorText": "\"Las parcelas familiares en los cementerios son muy prácticas\". Patriarca de la Cábala",
+          "language": "Spanish",
+          "name": "Órdenes del Patriarca",
+          "text": "Cada jugador elige un tipo de criatura. Cada jugador regresa al juego todas las cartas de criatura del tipo elegido de esta manera de su cementerio.",
+          "type": "Conjuro"
+        },
+        {
+          "flavorText": "« Les complots de famille sont si distrayants. » —Le patriarche de la Coterie",
+          "language": "French",
+          "name": "Ordre du patriarche",
+          "text": "Chaque joueur choisit un type de créature. Chaque joueur renvoie en jeu toutes les cartes de créature du type choisi se trouvant dans son cimetière.",
+          "type": "Rituel"
+        },
+        {
+          "flavorText": "\"Gli intrighi di famiglia sono davvero utili\". —Patriarca della Cabala",
+          "language": "Italian",
+          "name": "Comando del Patriarca",
+          "text": "Ogni giocatore sceglie un tipo di creatura. Ogni giocatore rimette in gioco tutte le carte creatura di un tipo scelto presenti nel proprio cimitero.",
+          "type": "Stregoneria"
+        },
+        { "language": "Japanese", "name": "総帥の召集" },
+        {
+          "flavorText": "\"As intrigas familiares são tão convenientes.\" — Patriarca da Cabala",
+          "language": "Portuguese (Brazil)",
+          "name": "Comando do Patriarca",
+          "text": "Cada jogador escolhe um tipo de criatura. Cada jogador devolve todos os cards de criatura de um dos tipos escolhidos desta maneira de seu cemitério para o jogo.",
+          "type": "Feitiço"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "25fc3bc2-d852-4f52-9adb-c7e35c06f3af"
+      },
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "premodern": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{3}{B}{B}",
+      "name": "Patriarch's Bidding",
+      "printings": ["ONS", "WC03"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/3c8676c82df43e99",
+        "cardKingdomFoil": "https://mtgjson.com/links/dd8b38aba67ed3e6",
+        "cardmarket": "https://mtgjson.com/links/0be8ffd1184fcfd1",
+        "tcgplayer": "https://mtgjson.com/links/07f7a1faa0a2732d"
+      },
+      "rulings": [],
+      "subtypes": [],
+      "supertypes": [],
+      "text": "Each player chooses a creature type. Each player returns all creature cards of a type chosen this way from their graveyard to the battlefield.",
+      "type": "Sorcery",
+      "types": ["Sorcery"]
+    }
+  ],
+  "Patriarch's Desire": [
+    {
+      "colorIdentity": ["B"],
+      "colors": ["B"],
+      "convertedManaCost": 4.0,
+      "edhrecRank": 20850,
+      "foreignData": [
+        {
+          "language": "German",
+          "name": "Verlangen des Patriarchen",
+          "text": "Die verzauberte Kreatur erhält +2/-2\nGrenzwert Die verzauberte Kreatur erhält zusätzlich +2/-2. (Du hast den Grenzwert erreicht, solange sieben oder mehr Karten in deinem Friedhof sind.)",
+          "type": "Kreaturenverzauberung"
+        },
+        {
+          "language": "Spanish",
+          "name": "Deseo del Patriarca",
+          "text": "La criatura encantada obtiene +2/-2.\nUmbral La criatura encantada obtiene +2/-2 adicionales. (Tienes umbral mientras haya siete o más cartas en tu cementerio.)",
+          "type": "Encantar criatura"
+        },
+        {
+          "language": "French",
+          "name": "Désir selon le Patriarche",
+          "text": "La créature enchantée gagne +2/-2.\nSeuil — La créature enchantée gagne un +2/-2 supplémentaire. (Vous avez le seuil tant qu'il y a sept cartes ou plus dans votre cimetière.)",
+          "type": "Enchanter : créature"
+        },
+        {
+          "language": "Italian",
+          "name": "Desiderio del Patriarca",
+          "text": "La creatura incantata prende +2/-2.\nSoglia La creatura incantata prende +2/-2 addizionale (hai soglia fintanto che ci sono almeno sette carte nel tuo cimitero).",
+          "type": "Incanta Creatura"
+        },
+        { "language": "Japanese", "name": "総帥の願望" },
+        {
+          "language": "Portuguese (Brazil)",
+          "name": "Desejo do Patriarca",
+          "text": "A criatura encantada recebe +2/-2.\nLimiar — A criatura encantada recebe um +2/-2 adicional. (Você atinge o limiar desde que haja sete ou mais cards em seu cemitério.)",
+          "type": "Encantar Criatura"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "23b518ab-561f-4551-8270-082cde99b993"
+      },
+      "keywords": ["Enchant", "Threshold"],
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "pauper": "Legal",
+        "penny": "Legal",
+        "premodern": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{3}{B}",
+      "name": "Patriarch's Desire",
+      "printings": ["ODY"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/7e29dc5e01ac53aa",
+        "cardKingdomFoil": "https://mtgjson.com/links/d4e72fcb373c4fdc",
+        "cardmarket": "https://mtgjson.com/links/995182f66036f80c",
+        "tcgplayer": "https://mtgjson.com/links/92f89c9db5e25771"
+      },
+      "rulings": [],
+      "subtypes": ["Aura"],
+      "supertypes": [],
+      "text": "Enchant creature\nEnchanted creature gets +2/-2.\nThreshold — Enchanted creature gets an additional +2/-2 as long as seven or more cards are in your graveyard.",
+      "type": "Enchantment — Aura",
+      "types": ["Enchantment"]
+    }
+  ],
+  "Patrician's Scorn": [
+    {
+      "colorIdentity": ["W"],
+      "colors": ["W"],
+      "convertedManaCost": 4.0,
+      "edhrecRank": 13202,
+      "foreignData": [
+        {
+          "flavorText": "Lady Farisas Verachtung für glitzernden Kitsch wurde nach ihrem Tod noch sprichwörtlicher.",
+          "language": "German",
+          "name": "Hohn des Patriziers",
+          "text": "Hast du in diesem Zug bereits einen anderen weißen Zauber gespielt, kannst du den Hohn des Patriziers spielen, ohne seine Manakosten zu bezahlen.\n Zerstöre alle Verzauberungen.",
+          "type": "Spontanzauber"
+        },
+        {
+          "flavorText": "El desprecio de Lady Farisa por lo frívolo y poco elegante se hizo aún más infame tras su muerte.",
+          "language": "Spanish",
+          "name": "Desdén del aristócrata",
+          "text": "Si jugaste otro hechizo blanco este turno, puedes jugar el Desdén del aristócrata sin pagar su coste de maná.Destruye todos los encantamientos.",
+          "type": "Instantáneo"
+        },
+        {
+          "flavorText": "Le mépris qu'avait la Dame Farisa pour le décor de mauvais goût devint encore plus célèbre après sa mort.",
+          "language": "French",
+          "name": "Mépris selon le patricien",
+          "text": "Si vous avez joué un autre sort blanc ce tour-ci, vous pouvez jouer le Mépris selon le patricien sans payer son coût de mana.\nDétruisez tous les enchantements.",
+          "type": "Éphémère"
+        },
+        {
+          "flavorText": "Il disdegno di Lady Farisa per la pacchiana volgarità divenne ancora più infame dopo la sua morte.",
+          "language": "Italian",
+          "name": "Disdegno del Patrizio",
+          "text": "Se hai giocato un'altra magia bianca in questo turno, puoi giocare il Disdegno del Patrizio senza pagare il suo costo di mana.\nDistruggi tutti gli incantesimi.",
+          "type": "Istantaneo"
+        },
+        {
+          "flavorText": "ファリーサ婦人のけばけばしく俗っぽい着飾りに対する侮蔑は、彼女が死した後にさらに悪名高いものになった。",
+          "language": "Japanese",
+          "name": "貴族階級の嘲笑",
+          "text": "このターン、あなたが他の白の呪文をプレイしている場合、あなたは貴族階級の嘲笑をマナ・コストを支払うことなくプレイしてもよい。\n すべてのエンチャントを破壊する。",
+          "type": "インスタント"
+        },
+        {
+          "flavorText": "O desprezo de Lady Farisa por tudo que é espalhafatoso e de mau gosto tornou-se ainda mais notório após sua morte.",
+          "language": "Portuguese (Brazil)",
+          "name": "Desprezo de Compatrício",
+          "text": "Se você jogou outra mágica branca neste turno, poderá jogar Desprezo de Compatrício sem pagar seu custo de mana.\nDestrua todos os encantamentos.",
+          "type": "Mágica Instantânea"
+        },
+        {
+          "flavorText": "Презрительное отношение леди Фарисы к безвкусице получило ещё большую огласку после её смерти.",
+          "language": "Russian",
+          "name": "Презрение Аристократки",
+          "text": "Если вы разыграли другое белое заклинание в этом ходу, вы можете разыграть Презрение Аристократки без уплаты его мана-стоимости.\nУничтожьте все чары.",
+          "type": "Мгновенное заклинание"
+        },
+        {
+          "flavorText": "法莉莎夫人是出了名的瞧不起俗气庸作，在她死后更变本加厉。",
+          "language": "Chinese Simplified",
+          "name": "显贵的轻蔑",
+          "text": "如果你本回合中使用过其它白色咒语，则你使用显贵的轻蔑时可以不支付其法术力费用。\n消灭所有结界。",
+          "type": "瞬间"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "0dc9acfb-3f8b-4a34-b44c-5cc62689904b"
+      },
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "pauper": "Legal",
+        "penny": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{3}{W}",
+      "name": "Patrician's Scorn",
+      "printings": ["FUT"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/f187783d849f7458",
+        "cardKingdomFoil": "https://mtgjson.com/links/43e759c633a053e1",
+        "cardmarket": "https://mtgjson.com/links/733e31795ca5892a",
+        "tcgplayer": "https://mtgjson.com/links/fd816090159fdd0c"
+      },
+      "rulings": [],
+      "subtypes": [],
+      "supertypes": [],
+      "text": "If you've cast another white spell this turn, you may cast this spell without paying its mana cost.\nDestroy all enchantments.",
+      "type": "Instant",
+      "types": ["Instant"]
+    }
+  ],
+  "Patrol Hound": [
+    {
+      "colorIdentity": ["W"],
+      "colors": ["W"],
+      "convertedManaCost": 2.0,
+      "edhrecRank": 16046,
+      "foreignData": [
+        {
+          "flavorText": "Er war der aufmerksame und scharfe Beschützer des Feldlagers. Für die jüngste Tochter des Torwächters war er immer nur ihr \"Knuffelwuffel\".",
+          "language": "German",
+          "name": "Spähhund",
+          "text": "Wirf eine Karte aus deiner Hand ab: Der Spähhund erhält Erstschlag bis zum Ende des Zuges.",
+          "type": "Kreatur — Hund"
+        },
+        {
+          "flavorText": "Para el campamento, era un protector fiero y leal. Para la hija menor del centinela, siempre sería su \"Adorado bollito\".",
+          "language": "Spanish",
+          "name": "Sabueso patrullero",
+          "text": "Descartar una carta de tu mano: El Sabueso patrullero gana la habilidad de dañar primero hasta el final del turno.",
+          "type": "Criatura — Perro"
+        },
+        {
+          "flavorText": "Pour les hommes du camp, c'était un protecteur loyal et redoutable. Mais pour la plus jeune fille de la sentinelle il resterait toujours « Loupinou ».",
+          "language": "French",
+          "name": "Chien de patrouille",
+          "text": "Défaussez-vous d'une carte de votre main : Le Chien de patrouille acquiert l'initiative jusqu'à la fin du tour.",
+          "type": "Créature : chien de chasse"
+        },
+        {
+          "flavorText": "All'accampamento era un guardiano feroce e leale. Per la figlia minore della sentinella, sarebbe sempre stato il suo \"cucciolotto pelosino\".",
+          "language": "Italian",
+          "name": "Segugio da Perlustrazione",
+          "text": "Scarta una carta dalla tua mano: Il Segugio da Perlustrazione guadagna attacco improvviso fino alla fine del turno.",
+          "type": "Creatura — Segugio"
+        },
+        { "language": "Japanese", "name": "巡視犬" },
+        {
+          "flavorText": "Para o acampamento, ele era um protetor leal e feroz. Para a filha mais nova do sentinela, ele sempre seria o seu \"Fofinho\".",
+          "language": "Portuguese (Brazil)",
+          "name": "Sabujo Patrulheiro",
+          "text": "Descarte um card de sua mão: Sabujo Patrulheiro ganha iniciativa até o final do turno.",
+          "type": "Criatura — Sabujo"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "115dabbd-1a09-4641-a428-92fcbfd82ae9"
+      },
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "pauper": "Legal",
+        "premodern": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{1}{W}",
+      "name": "Patrol Hound",
+      "power": "2",
+      "printings": ["ODY"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/36fe9a6f844cfcf2",
+        "cardKingdomFoil": "https://mtgjson.com/links/8e63e834c4e93dcc",
+        "cardmarket": "https://mtgjson.com/links/3b5f9e4543d8c08d",
+        "tcgplayer": "https://mtgjson.com/links/3f5f0c1215c2cdb3"
+      },
+      "rulings": [],
+      "subtypes": ["Dog"],
+      "supertypes": [],
+      "text": "Discard a card: Patrol Hound gains first strike until end of turn.",
+      "toughness": "2",
+      "type": "Creature — Dog",
+      "types": ["Creature"]
+    }
+  ],
+  "Patrol Signaler": [
+    {
+      "colorIdentity": ["W"],
+      "colors": ["W"],
+      "convertedManaCost": 2.0,
+      "edhrecRank": 12396,
+      "foreignData": [
+        {
+          "flavorText": "So mancher hellhörige Butz wurde von einem listig und schweigend ausgeführten Kithkin-Hinterhalt erwischt.",
+          "language": "German",
+          "name": "Patrouillen-Signalgeber",
+          "text": "{1}{W}, {Q}: Bringe einen 1/1 weißen (Kithkin, Soldat)-Kreaturenspielstein ins Spiel. ({Q} ist das Enttappsymbol.)",
+          "type": "Kreatur — Kithkin, Soldat"
+        },
+        {
+          "flavorText": "Muchos bogles cayeron en emboscadas kithkin orquestadas silenciosa y astutamente.",
+          "language": "Spanish",
+          "name": "Señalizadora de la patrulla",
+          "text": "{1}{W}, {Q}: Pon en juego una ficha de criatura Soldado Kithkin blanca 1/1. ({Q} es el símbolo de enderezar.)",
+          "type": "Criatura — Soldado kithkin"
+        },
+        {
+          "flavorText": "Malgré leur ouïe fine, bon nombre de bogles sont tombés dans des embuscades orchestrées silencieusement par les sangamis.",
+          "language": "French",
+          "name": "Signaleur de patrouille",
+          "text": "{1}{W}, {Q} : Mettez en jeu un jeton de créature 1/1 blanche Sangami et Soldat. ({Q} est le symbole de dégagement.)",
+          "type": "Créature : sangami et soldat"
+        },
+        {
+          "flavorText": "Più di un bogle dall'orecchio fine è entrato in conflitto con un'imboscata kithkin sagace e silenziosa.",
+          "language": "Italian",
+          "name": "Segnalatrice della Pattuglia",
+          "text": "{1}{W}, {Q}: Metti in gioco una pedina creatura Soldato Kithkin 1/1 bianca. ({Q} è il simbolo di STAP.)",
+          "type": "Creatura — Soldato Kithkin"
+        },
+        {
+          "flavorText": "早耳のボーグルですら、その多くが賢く静かに指揮されたキスキンの待ち伏せに悩まされる。",
+          "language": "Japanese",
+          "name": "巡回の信号手",
+          "text": "{1}{W}, {Q}：白の１/１のキスキン・兵士・クリーチャー・トークンを１体場に出す。 （{Q}はアンタップ・シンボルである。）",
+          "type": "クリーチャー — キスキン・兵士"
+        },
+        {
+          "flavorText": "Muitos bogles atentos já caíram nas astutas e silenciosamente executadas armadilhas kithkin.",
+          "language": "Portuguese (Brazil)",
+          "name": "Sinaleiro de Patrulha",
+          "text": "{1}{W}, {Q}: Coloque em jogo uma ficha de criatura branca 1/1 do tipo Kithkin Soldado. ({Q} é o símbolo de desvirar.)",
+          "type": "Criatura — Kithkin Soldado"
+        },
+        {
+          "flavorText": "Несмотря на чуткий слух, уже не один богл попал в хитро и тихо расставленную западню кискенов.",
+          "language": "Russian",
+          "name": "Патрульная Сигнальщица",
+          "text": "{1}{W}, {Q}: положите в игру одну фишку существа 1/1 белый Кискен Солдат. ({Q} символ разворота карты.)",
+          "type": "Существо — Кискен Солдат"
+        },
+        {
+          "flavorText": "就算是听觉灵敏的波葛，也经常躲不过高明安排又毫无声息的洁英突袭。",
+          "language": "Chinese Simplified",
+          "name": "巡逻信号兵",
+          "text": "{1}{W}，{Q}：将一个1/1白色洁英／士兵衍生物放置进场。 （{Q}是重置符号。）",
+          "type": "生物～洁英／士兵"
+        }
+      ],
+      "identifiers": {
+        "scryfallOracleId": "1a8d7714-a566-4195-8605-550929584c61"
+      },
+      "layout": "normal",
+      "legalities": {
+        "commander": "Legal",
+        "duel": "Legal",
+        "legacy": "Legal",
+        "modern": "Legal",
+        "penny": "Legal",
+        "vintage": "Legal"
+      },
+      "manaCost": "{1}{W}",
+      "name": "Patrol Signaler",
+      "power": "1",
+      "printings": ["EVE"],
+      "purchaseUrls": {
+        "cardKingdom": "https://mtgjson.com/links/c1beaf8c31beaca2",
+        "cardKingdomFoil": "https://mtgjson.com/links/19ae0b7cd01099e9",
+        "cardmarket": "https://mtgjson.com/links/18d6178364af1772",
+        "tcgplayer": "https://mtgjson.com/links/e3c91fca271b4ffa"
+      },
+      "rulings": [
+        {
+          "date": "2008-08-01",
+          "text": "If the permanent is already untapped, you can’t activate its {Q} ability. That’s because you can’t pay the “Untap this permanent” cost."
+        },
+        {
+          "date": "2008-08-01",
+          "text": "The “summoning sickness” rule applies to {Q}. If a creature with an {Q} ability hasn’t been under your control since your most recent turn began, you can’t activate that ability. Ignore this rule if the creature also has haste."
+        },
+        {
+          "date": "2008-08-01",
+          "text": "When you activate an {Q} ability, you untap the creature with that ability as a cost. The untap can’t be responded to. (The actual ability can be responded to, of course.)"
+        }
+      ],
+      "subtypes": ["Kithkin", "Soldier"],
+      "supertypes": [],
+      "text": "{1}{W}, {Q}: Create a 1/1 white Kithkin Soldier creature token. ({Q} is the untap symbol.)",
+      "toughness": "1",
+      "type": "Creature — Kithkin Soldier",
+      "types": ["Creature"]
+    }
+  ]
+}
