@@ -1,6 +1,5 @@
 import { ButtonBase, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import Card from "../models/cardModel";
 import { DeckCards, DeckCardData } from "../models/deckModel";
 
 const useStyles = makeStyles({
@@ -12,6 +11,7 @@ const useStyles = makeStyles({
     padding: 10,
     display: "flex",
     flexDirection: "row",
+    justifyContent: "center",
     alignItems: "center",
     borderTop: "1px solid #c4c4c4",
     "&:first-child": {
@@ -52,13 +52,11 @@ const useStyles = makeStyles({
   },
 });
 
-const SimpleButton = ({ children, ...props }: any) => {
+const SimpleButton = ({ children, cssClass, ...props }: any) => {
   const classes = useStyles();
   return (
     <ButtonBase
-      className={`${classes.simpleButton} ${
-        props?.cssClass ? props.cssClass : ""
-      }`}
+      className={`${classes.simpleButton} ${cssClass ?? ""}`}
       {...props}
     >
       <Typography variant='body1'>{children}</Typography>
@@ -73,6 +71,13 @@ interface CardListProps {
 
 const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
   const classes = useStyles();
+
+  if (!Object.entries(cards).length)
+    return (
+      <div className={classes.cardItemContainer}>
+        <div className={classes.cardItem}>No cards in deck</div>
+      </div>
+    );
 
   return (
     <div className={classes.cardItemContainer}>
