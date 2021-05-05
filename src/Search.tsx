@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { Autocomplete } from "@material-ui/lab";
 import { Box, CircularProgress, TextField } from "@material-ui/core";
 import useDebounce from "../util/useDebounce";
@@ -32,13 +32,16 @@ const CardSearch: React.FC = () => {
   }, [debouncedSearchTerm]);
 
   const handleOptionSelected = (
-    event: object,
+    e: ChangeEvent<{}>,
     value: CardModel,
     reason: string
   ) => {
     if (reason !== "select-option") return;
     console.log("Add selected card to deck:", value);
-    setInputValue("");
+    // input value doesn't reset without the settimeout
+    setTimeout(() => {
+      setInputValue("");
+    }, 1);
   };
 
   return (
