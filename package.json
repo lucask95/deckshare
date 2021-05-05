@@ -11,6 +11,7 @@
     "@material-ui/lab": "*",
     "clsx": "latest",
     "next": "latest",
+    "pg": "^8.6.0",
     "react": "latest",
     "react-dom": "latest"
   },
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "latest",
+    "@types/pg": "^7.14.11",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "typescript": "latest"

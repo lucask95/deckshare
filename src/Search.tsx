@@ -12,6 +12,7 @@ const CardSearch: React.FC = () => {
 
   useEffect(() => {
     if (!debouncedSearchTerm) return;
+
     async function searchForCard() {
       setIsLoading(true);
       try {
@@ -19,8 +20,7 @@ const CardSearch: React.FC = () => {
           `http://localhost:3000/api/search/${debouncedSearchTerm}`
         );
         const results = await response.json();
-        setCardOptions(results.cards);
-        console.log("Received cards:", results);
+        setCardOptions(results);
       } catch (error) {
         console.error("Error searching for cards:", error);
       }
@@ -31,10 +31,6 @@ const CardSearch: React.FC = () => {
     searchForCard();
   }, [debouncedSearchTerm]);
 
-  useEffect(() => {
-    // console.log({ cardOptions });
-  }, [cardOptions]);
-
   const handleOptionSelected = (
     event: object,
     value: CardModel,
@@ -43,19 +39,19 @@ const CardSearch: React.FC = () => {
     if (reason !== "select-option") return;
     console.log("Add selected card to deck:", value);
     setInputValue("");
-    setCardOptions([]);
   };
 
   return (
     <Autocomplete
+      clearOnBlur={false}
       loading={isLoading}
       loadingText={
         <Box display='flex' flexDirection='row' justifyContent='center'>
           <CircularProgress />
         </Box>
       }
-      options={cardOptions}
-      getOptionLabel={(option: any) => option.name}
+      options={cardOptions ?? []}
+      getOptionLabel={(option: any) => option?.["card_name"]}
       inputValue={inputValue}
       onInputChange={(e: object, value: string, reason: string) => {
         setInputValue(value);

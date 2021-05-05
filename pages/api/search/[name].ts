@@ -1,24 +1,21 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import mockData from "../../../util/mockData.json";
+import { Pool } from "pg";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const {
     query: { name },
     method,
   } = req;
 
-  const mockReturnValue = [
-    mockData["Path to Exile"][0],
-    mockData["Path to the World Tree"][0],
-    mockData["Pathbreaker Ibex"][0],
-    mockData["Pathbreaker Wurm"][0],
-    mockData["Pathmaker Initiate"][0],
-  ];
+  const pool = new Pool();
+  const queryText = "SELECT * FROM cards WHERE card_name ILIKE $1 LIMIT 20";
+  const queryRes = await pool.query(queryText, [`${name}%`]);
 
   if (method === "GET") {
-    res.status(200).json({
-      cards: mockReturnValue,
-    });
+    res.status(200).json(queryRes?.rows);
   } else {
     res.status(500).json({
       message: "not supported",
