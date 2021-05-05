@@ -61,6 +61,7 @@ const CardSearch: React.FC<Props> = ({ addCard }) => {
     // input value doesn't reset without the settimeout
     setTimeout(() => {
       setInputValue("");
+      setCardOptions([]);
     }, 1);
   };
 
