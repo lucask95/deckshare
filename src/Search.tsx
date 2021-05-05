@@ -9,6 +9,10 @@ import {
 import useDebounce from "../util/useDebounce";
 import CardModel from "../models/cardModel";
 
+interface Props {
+  addCard: Function;
+}
+
 const useStyles = makeStyles({
   optionDiv: {
     display: "flex",
@@ -19,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-const CardSearch: React.FC = () => {
+const CardSearch: React.FC<Props> = ({ addCard }) => {
   const classes = useStyles();
   const [cardOptions, setCardOptions] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -53,7 +57,7 @@ const CardSearch: React.FC = () => {
     reason: string
   ) => {
     if (reason !== "select-option") return;
-    console.log("Add selected card to deck:", value);
+    addCard?.(value);
     // input value doesn't reset without the settimeout
     setTimeout(() => {
       setInputValue("");
