@@ -1,10 +1,26 @@
 import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { Autocomplete } from "@material-ui/lab";
-import { Box, CircularProgress, TextField } from "@material-ui/core";
+import {
+  Box,
+  CircularProgress,
+  makeStyles,
+  TextField,
+} from "@material-ui/core";
 import useDebounce from "../util/useDebounce";
 import CardModel from "../models/cardModel";
 
+const useStyles = makeStyles({
+  optionDiv: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
+});
+
 const CardSearch: React.FC = () => {
+  const classes = useStyles();
   const [cardOptions, setCardOptions] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +49,7 @@ const CardSearch: React.FC = () => {
 
   const handleOptionSelected = (
     e: ChangeEvent<{}>,
-    value: CardModel,
+    value: any,
     reason: string
   ) => {
     if (reason !== "select-option") return;
@@ -46,7 +62,8 @@ const CardSearch: React.FC = () => {
 
   return (
     <Autocomplete
-      clearOnBlur={false}
+      freeSolo
+      debug
       loading={isLoading}
       loadingText={
         <Box display='flex' flexDirection='row' justifyContent='center'>
@@ -55,6 +72,14 @@ const CardSearch: React.FC = () => {
       }
       options={cardOptions ?? []}
       getOptionLabel={(option: any) => option?.["card_name"]}
+      renderOption={(option: any) => {
+        return (
+          <div className={classes.optionDiv}>
+            <div>{option?.["card_name"]}</div>
+            <div>{option?.["mana_cost"]}</div>
+          </div>
+        );
+      }}
       inputValue={inputValue}
       onInputChange={(e: object, value: string, reason: string) => {
         setInputValue(value);
