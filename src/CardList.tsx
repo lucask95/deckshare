@@ -4,10 +4,19 @@ import Card from "../models/cardModel";
 import { DeckCards, DeckCardData } from "../models/deckModel";
 
 const useStyles = makeStyles({
+  cardItemContainer: {
+    borderRadius: 5,
+    border: "1px solid #c4c4c4",
+  },
   cardItem: {
+    padding: 10,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    borderTop: "1px solid #c4c4c4",
+    "&:first-child": {
+      borderTop: "none",
+    },
   },
   simpleButton: {
     width: 30,
@@ -17,13 +26,41 @@ const useStyles = makeStyles({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    margin: "0 2.5px",
+    transition: "background-color .1s",
+  },
+  defaultButton: {
+    backgroundColor: "#999999",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#ababab",
+    },
+  },
+  primaryButton: {
+    backgroundColor: "#2173de",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#428beb",
+    },
+  },
+  redButton: {
+    backgroundColor: "#c22b2b",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#e04c4c",
+    },
   },
 });
 
 const SimpleButton = ({ children, ...props }: any) => {
   const classes = useStyles();
   return (
-    <ButtonBase className={classes.simpleButton} {...props}>
+    <ButtonBase
+      className={`${classes.simpleButton} ${
+        props?.cssClass ? props.cssClass : ""
+      }`}
+      {...props}
+    >
       <Typography variant='body1'>{children}</Typography>
     </ButtonBase>
   );
@@ -31,29 +68,14 @@ const SimpleButton = ({ children, ...props }: any) => {
 
 interface CardListProps {
   cards: DeckCards;
+  setCardAmount: Function;
 }
 
-const CardList: React.FC<CardListProps> = ({ cards }) => {
+const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
   const classes = useStyles();
 
-  const handleRemoveAll = (card: Card) => {
-    console.log("Remove all:", card);
-  };
-
-  const handleRemove = (card: Card) => {
-    console.log("Remove card:", card);
-  };
-
-  const handleAdd = (card: Card) => {
-    console.log("Add card:", card);
-  };
-
-  const handleSetToFour = (card: Card) => {
-    console.log("Set to four:", card);
-  };
-
   return (
-    <div>
+    <div className={classes.cardItemContainer}>
       {Object.entries(cards).map((card) => {
         const cardName: string = card[0];
         const cardData: DeckCardData = card[1];
@@ -61,32 +83,36 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
         return (
           <div key={cardData.data.id} className={classes.cardItem}>
             <SimpleButton
+              cssClass={classes.redButton}
               onClick={() => {
-                handleRemoveAll(cardData.data);
+                setCardAmount(cardData.data, 0);
               }}
             >
               x
             </SimpleButton>
 
             <SimpleButton
+              cssClass={classes.primaryButton}
               onClick={() => {
-                handleRemove(cardData.data);
+                setCardAmount(cardData.data, cardData.count - 1);
               }}
             >
               -
             </SimpleButton>
 
             <SimpleButton
+              cssClass={classes.primaryButton}
               onClick={() => {
-                handleAdd(cardData.data);
+                setCardAmount(cardData.data, cardData.count + 1);
               }}
             >
               +
             </SimpleButton>
 
             <SimpleButton
+              cssClass={classes.primaryButton}
               onClick={() => {
-                handleSetToFour(cardData.data);
+                setCardAmount(cardData.data, 4);
               }}
             >
               4

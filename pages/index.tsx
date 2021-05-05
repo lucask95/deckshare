@@ -8,19 +8,23 @@ import CardSearch from "../src/Search";
 export default function Index() {
   const [deckList, setDeckList] = useState<DeckCards>({});
 
-  const addCard = (card: Card) => {
+  const setCardAmount = (card: Card, amount: number) => {
     const newList = { ...deckList };
 
-    if (card.card_name in newList) {
-      newList[card.card_name].count++;
+    if (amount <= 0) {
+      delete newList[card.card_name];
     } else {
       newList[card.card_name] = {
         data: card,
-        count: 1,
+        count: amount,
       };
     }
 
     setDeckList(newList);
+  };
+
+  const addCard = (card: Card) => {
+    setCardAmount(card, 1);
   };
 
   return (
@@ -29,7 +33,7 @@ export default function Index() {
       <CardSearch addCard={addCard} />
 
       {/* cards */}
-      <CardList cards={deckList} />
+      <CardList cards={deckList} setCardAmount={setCardAmount} />
 
       {/* stats */}
       <div>Stats placeholder</div>
