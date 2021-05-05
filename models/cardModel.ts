@@ -1,4 +1,4 @@
-type CardModel = {
+type Card = {
   id: number;
   color_identity: Array<string>;
   colors: Array<string>;
@@ -12,4 +12,4 @@ type CardModel = {
   legalities: Array<string>;
 };
 
-export default CardModel;
+export default Card;

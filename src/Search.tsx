@@ -7,7 +7,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import useDebounce from "../util/useDebounce";
-import CardModel from "../models/cardModel";
+import Card from "../models/cardModel";
 
 interface Props {
   addCard: Function;

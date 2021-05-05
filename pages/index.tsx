@@ -1,14 +1,26 @@
 import React, { useState } from "react";
-import CardModel from "../models/cardModel";
+import Card from "../models/cardModel";
+import { DeckCards } from "../models/deckModel";
 import CardList from "../src/CardList";
 import Layout from "../src/Layout";
 import CardSearch from "../src/Search";
 
 export default function Index() {
-  const [cardList, setCardList] = useState<CardModel[]>([]);
+  const [deckList, setDeckList] = useState<DeckCards>({});
 
-  const addCard = (card: CardModel) => {
-    setCardList([...cardList, card]);
+  const addCard = (card: Card) => {
+    const newList = { ...deckList };
+
+    if (card.card_name in newList) {
+      newList[card.card_name].count++;
+    } else {
+      newList[card.card_name] = {
+        data: card,
+        count: 1,
+      };
+    }
+
+    setDeckList(newList);
   };
 
   return (
@@ -17,7 +29,7 @@ export default function Index() {
       <CardSearch addCard={addCard} />
 
       {/* cards */}
-      <CardList cards={cardList} />
+      <CardList cards={deckList} />
 
       {/* stats */}
       <div>Stats placeholder</div>
