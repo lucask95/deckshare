@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import useDebounce from "../util/useDebounce";
 import Card from "../models/cardModel";
+import Mana from "./Mana";
 
 interface Props {
   addCard: Function;
@@ -81,7 +82,7 @@ const CardSearch: React.FC<Props> = ({ addCard }) => {
         return (
           <div className={classes.optionDiv}>
             <div>{option?.["card_name"]}</div>
-            <div>{option?.["mana_cost"]}</div>
+            <Mana manaCost={option?.["mana_cost"]} />
           </div>
         );
       }}

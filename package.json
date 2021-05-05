@@ -8,8 +8,10 @@
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
     "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "*",
     "clsx": "latest",
+    "mana-font": "^1.10.0",
     "next": "latest",
     "pg": "^8.6.0",
     "react": "latest",
@@ -22,6 +24,7 @@
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "devDependencies": {
+    "@types/material-ui": "^0.21.8",
     "@types/node": "latest",
     "@types/pg": "^7.14.11",
     "@types/react": "latest",
