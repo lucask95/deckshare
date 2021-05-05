@@ -10,8 +10,6 @@ const Mana: React.FC<Props> = ({ manaCost }) => {
     symbol[1].replace(/\W/g, "").toLowerCase()
   );
 
-  console.log(symbols);
-
   return (
     <div>
       {symbols.map((symbol, index) => (
