@@ -1,22 +1,27 @@
-import * as React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
-import createEmotionServer from '@emotion/server/create-instance';
-import theme from '../src/theme';
-import { cache } from './_app';
+import * as React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheets } from "@material-ui/core/styles";
+import createEmotionServer from "@emotion/server/create-instance";
+import theme from "../src/theme";
+import { cache } from "./_app";
 
 const { extractCritical } = createEmotionServer(cache);
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang='en'>
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name='theme-color' content={theme.palette.primary.main} />
           <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel='stylesheet'
+            href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+          />
+          <link
+            href='https://unpkg.com/@saeris/typeface-beleren-bold@latest/index.css'
+            rel='stylesheet'
+            type='text/css'
           />
         </Head>
         <body>
@@ -72,8 +77,8 @@ MyDocument.getInitialProps = async (ctx) => {
       ...React.Children.toArray(initialProps.styles),
       sheets.getStyleElement(),
       <style
-        key="emotion-style-tag"
-        data-emotion={`css ${styles.ids.join(' ')}`}
+        key='emotion-style-tag'
+        data-emotion={`css ${styles.ids.join(" ")}`}
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: styles.css }}
       />,

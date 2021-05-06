@@ -1,3 +1,4 @@
+import { Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import Card from "../models/cardModel";
 import { DeckCards } from "../models/deckModel";
@@ -30,13 +31,28 @@ export default function Index() {
   return (
     <Layout>
       {/* search */}
-      <CardSearch addCard={addCard} />
+      <div style={{ marginBottom: 35 }}>
+        <Typography variant='h6' gutterBottom>
+          Search
+        </Typography>
+        <CardSearch addCard={addCard} />
+      </div>
 
       {/* cards */}
-      <CardList cards={deckList} setCardAmount={setCardAmount} />
+      <div style={{ flex: 1 }}>
+        <Typography variant='h6' gutterBottom>
+          Decklist
+        </Typography>
+        <CardList cards={deckList} setCardAmount={setCardAmount} />
+      </div>
 
       {/* stats */}
-      <div>Stats placeholder</div>
+      <div style={{ marginTop: 35 }}>
+        <Typography variant='h6' gutterBottom>
+          Statistics
+        </Typography>
+        Stats placeholder
+      </div>
     </Layout>
   );
 }

@@ -8,6 +8,7 @@ import {
 import Head from "next/head";
 import React from "react";
 import Link from "./Link";
+import Mana from "./Mana";
 
 interface Props {
   titleAddition?: string;
@@ -22,6 +23,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     main: {
       flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      padding: 20,
     },
     rootContainer: {
       backgroundColor: "white",
@@ -37,6 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up("lg")]: {
         width: theme.breakpoints.values.lg,
       },
+    },
+    header: {
+      borderBottom: "2px solid black",
+      padding: 20,
+      fontFamily: "Beleren Bold",
     },
     footer: {
       borderTop: "2px solid black",
@@ -58,6 +67,37 @@ const Layout: React.FC<Props> = ({ titleAddition, children }) => {
       </Head>
 
       <Container className={classes.rootContainer}>
+        <header className={classes.header}>
+          <div
+            style={{
+              fontSize: "1.5rem",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Mana manaCost={"[{W}{U}{B}"} />
+            <span
+              style={{
+                fontSize: "2.5rem",
+                margin: "0 10px",
+              }}
+            >
+              Deckshare
+            </span>
+            <Mana manaCost={"[{R}{G}{C}"} />
+          </div>
+          <div
+            style={{
+              fontSize: "1rem",
+              textAlign: "center",
+            }}
+          >
+            Quickly build and share Magic: the Gathering decklists
+          </div>
+        </header>
+
         <main className={classes.main}>{children}</main>
 
         <footer className={classes.footer}>
