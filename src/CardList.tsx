@@ -24,6 +24,10 @@ const useStyles = makeStyles({
     backgroundColor: "#d6d6d6",
     fontSize: ".75rem",
     textTransform: "uppercase",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   simpleButton: {
     width: 30,
@@ -147,6 +151,9 @@ interface CardListProps {
 
 const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
   const classes = useStyles();
+  // const numCards = Object.entries(cards)
+  //   .map((card) => card[1].count)
+  //   .reduce((a, b) => a + b, 0);
 
   const creatures = Object.entries(cards).filter((card) =>
     card[1].data.card_type.includes("Creature")
@@ -160,10 +167,21 @@ const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
     return true;
   });
 
+  const creatureCount = creatures
+    .map((card) => card[1].count)
+    .reduce((a, b) => a + b, 0);
+  const landCount = lands
+    .map((card) => card[1].count)
+    .reduce((a, b) => a + b, 0);
+  const noncreatureCount = noncreatures
+    .map((card) => card[1].count)
+    .reduce((a, b) => a + b, 0);
+  const totalCount = creatureCount + landCount + noncreatureCount;
+
   const arranged = [
-    { name: "Creatures", data: creatures },
-    { name: "Non-Creatures", data: noncreatures },
-    { name: "Lands", data: lands },
+    { name: "Creatures", data: creatures, count: creatureCount },
+    { name: "Non-Creatures", data: noncreatures, count: noncreatureCount },
+    { name: "Lands", data: lands, count: landCount },
   ];
 
   if (!Object.entries(cards).length)
@@ -174,24 +192,30 @@ const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
     );
 
   return (
-    <div className={classes.cardItemContainer}>
-      {arranged.map((entry) => {
-        if (!entry.data.length) return <React.Fragment></React.Fragment>;
-        return (
-          <>
-            <div className={classes.cardSectionHeader}>{entry.name}</div>
-            {entry.data.map((card) => (
-              <CardItem
-                key={card[1].data.id}
-                cardName={card[0]}
-                cardData={card[1]}
-                setCardAmount={setCardAmount}
-              />
-            ))}
-          </>
-        );
-      })}
-    </div>
+    <React.Fragment>
+      <div style={{ marginBottom: 10 }}>{totalCount} cards</div>
+      <div className={classes.cardItemContainer}>
+        {arranged.map((entry) => {
+          if (!entry.data.length) return <React.Fragment></React.Fragment>;
+          return (
+            <React.Fragment key={entry.name}>
+              <div className={classes.cardSectionHeader}>
+                <div>{entry.name}</div>
+                <div>{entry.count}</div>
+              </div>
+              {entry.data.map((card) => (
+                <CardItem
+                  key={card[1].data.id}
+                  cardName={card[0]}
+                  cardData={card[1]}
+                  setCardAmount={setCardAmount}
+                />
+              ))}
+            </React.Fragment>
+          );
+        })}
+      </div>
+    </React.Fragment>
   );
 };
 
