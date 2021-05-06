@@ -1,6 +1,7 @@
 import { ButtonBase, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { DeckCards, DeckCardData } from "../models/deckModel";
+import Mana from "./Mana";
 
 const useStyles = makeStyles({
   cardItemContainer: {
@@ -17,6 +18,12 @@ const useStyles = makeStyles({
     "&:first-child": {
       borderTop: "none",
     },
+  },
+  cardSectionHeader: {
+    padding: "8px 12px",
+    backgroundColor: "#d6d6d6",
+    fontSize: ".75rem",
+    textTransform: "uppercase",
   },
   simpleButton: {
     width: 30,
@@ -64,6 +71,75 @@ const SimpleButton = ({ children, cssClass, ...props }: any) => {
   );
 };
 
+interface CardItemProps {
+  cardName: string;
+  cardData: DeckCardData;
+  setCardAmount: Function;
+}
+
+const CardItem: React.FC<CardItemProps> = ({
+  cardName,
+  cardData,
+  setCardAmount,
+}) => {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.cardItem}>
+      <SimpleButton
+        cssClass={classes.redButton}
+        onClick={() => {
+          setCardAmount(cardData.data, 0);
+        }}
+      >
+        x
+      </SimpleButton>
+
+      <SimpleButton
+        cssClass={classes.primaryButton}
+        onClick={() => {
+          setCardAmount(cardData.data, cardData.count - 1);
+        }}
+      >
+        -
+      </SimpleButton>
+
+      <SimpleButton
+        cssClass={classes.primaryButton}
+        onClick={() => {
+          setCardAmount(cardData.data, cardData.count + 1);
+        }}
+      >
+        +
+      </SimpleButton>
+
+      <SimpleButton
+        cssClass={classes.primaryButton}
+        onClick={() => {
+          setCardAmount(cardData.data, 4);
+        }}
+      >
+        4
+      </SimpleButton>
+
+      <div style={{ margin: "0 15px" }}>
+        <Typography variant='body1'>{cardData.count}</Typography>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flex: 1,
+        }}
+      >
+        <Typography>{cardName}</Typography>
+        <Mana manaCost={cardData.data.mana_cost} />
+      </div>
+    </div>
+  );
+};
+
 interface CardListProps {
   cards: DeckCards;
   setCardAmount: Function;
@@ -71,6 +147,24 @@ interface CardListProps {
 
 const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
   const classes = useStyles();
+
+  const creatures = Object.entries(cards).filter((card) =>
+    card[1].data.card_type.includes("Creature")
+  );
+  const lands = Object.entries(cards).filter((card) =>
+    card[1].data.card_type.includes("Land")
+  );
+  const noncreatures = Object.entries(cards).filter((card) => {
+    const type = card[1].data.card_type;
+    if (type.includes("Creature") || type.includes("Land")) return false;
+    return true;
+  });
+
+  const arranged = [
+    { name: "Creatures", data: creatures },
+    { name: "Non-Creatures", data: noncreatures },
+    { name: "Lands", data: lands },
+  ];
 
   if (!Object.entries(cards).length)
     return (
@@ -81,63 +175,20 @@ const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
 
   return (
     <div className={classes.cardItemContainer}>
-      {Object.entries(cards).map((card) => {
-        const cardName: string = card[0];
-        const cardData: DeckCardData = card[1];
-
+      {arranged.map((entry) => {
+        if (!entry.data.length) return <React.Fragment></React.Fragment>;
         return (
-          <div key={cardData.data.id} className={classes.cardItem}>
-            <SimpleButton
-              cssClass={classes.redButton}
-              onClick={() => {
-                setCardAmount(cardData.data, 0);
-              }}
-            >
-              x
-            </SimpleButton>
-
-            <SimpleButton
-              cssClass={classes.primaryButton}
-              onClick={() => {
-                setCardAmount(cardData.data, cardData.count - 1);
-              }}
-            >
-              -
-            </SimpleButton>
-
-            <SimpleButton
-              cssClass={classes.primaryButton}
-              onClick={() => {
-                setCardAmount(cardData.data, cardData.count + 1);
-              }}
-            >
-              +
-            </SimpleButton>
-
-            <SimpleButton
-              cssClass={classes.primaryButton}
-              onClick={() => {
-                setCardAmount(cardData.data, 4);
-              }}
-            >
-              4
-            </SimpleButton>
-
-            <div style={{ margin: "0 15px" }}>
-              <Typography variant='body1'>{cardData.count}</Typography>
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                flex: 1,
-              }}
-            >
-              <div>{cardName}</div>
-              <div>{cardData.data.mana_cost}</div>
-            </div>
-          </div>
+          <>
+            <div className={classes.cardSectionHeader}>{entry.name}</div>
+            {entry.data.map((card) => (
+              <CardItem
+                key={card[1].data.id}
+                cardName={card[0]}
+                cardData={card[1]}
+                setCardAmount={setCardAmount}
+              />
+            ))}
+          </>
         );
       })}
     </div>

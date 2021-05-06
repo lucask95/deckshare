@@ -13,7 +13,11 @@ const Mana: React.FC<Props> = ({ manaCost }) => {
   return (
     <div>
       {symbols.map((symbol, index) => (
-        <i key={index} className={`ms ms-cost ms-shadow ms-${symbol}`} />
+        <i
+          key={index}
+          className={`ms ms-cost ms-shadow ms-${symbol}`}
+          style={{ margin: "1px" }}
+        />
       ))}
     </div>
   );
