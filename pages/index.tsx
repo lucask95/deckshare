@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "../models/cardModel";
 import { DeckCards } from "../models/deckModel";
 import CardList from "../src/CardList";
+import DeckStats from "../src/DeckStats";
 import Layout from "../src/Layout";
 import CardSearch from "../src/Search";
 
@@ -51,7 +52,7 @@ export default function Index() {
         <Typography variant='h6' gutterBottom>
           Statistics
         </Typography>
-        Stats placeholder
+        <DeckStats deckList={deckList} />
       </div>
     </Layout>
   );

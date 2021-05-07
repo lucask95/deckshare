@@ -15,7 +15,8 @@
     "next": "latest",
     "pg": "^8.6.0",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "recharts": "^2.0.9"
   },
   "scripts": {
     "dev": "next",
@@ -29,6 +30,7 @@
     "@types/pg": "^7.14.11",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/recharts": "^1.8.19",
     "typescript": "latest"
   }
 }
