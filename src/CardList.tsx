@@ -1,67 +1,108 @@
-import { ButtonBase, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import {
+  ButtonBase,
+  makeStyles,
+  Typography,
+  Theme,
+  createStyles,
+} from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import Card from "../models/cardModel";
 import { DeckCards, DeckCardData } from "../models/deckModel";
+import CardDisplay from "./CardDisplay";
 import Mana from "./Mana";
 
-const useStyles = makeStyles({
-  cardItemContainer: {
-    borderRadius: 5,
-    border: "1px solid #c4c4c4",
-  },
-  cardItem: {
-    padding: 10,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    borderTop: "1px solid #c4c4c4",
-    "&:first-child": {
-      borderTop: "none",
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    cardItemContainer: {
+      borderRadius: 5,
+      border: "1px solid #c4c4c4",
     },
-  },
-  cardSectionHeader: {
-    padding: "8px 12px",
-    backgroundColor: "#d6d6d6",
-    fontSize: ".75rem",
-    textTransform: "uppercase",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  simpleButton: {
-    width: 30,
-    height: 30,
-    borderRadius: 999,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "0 2.5px",
-    transition: "background-color .1s",
-  },
-  defaultButton: {
-    backgroundColor: "#999999",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#ababab",
+    cardItem: {
+      padding: 10,
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      borderTop: "1px solid #c4c4c4",
+      transition: "background-color .05s",
+      "&:first-child": {
+        borderTop: "none",
+      },
+      "&:hover": {
+        backgroundColor: "#e8f9ff",
+      },
     },
-  },
-  primaryButton: {
-    backgroundColor: "#2173de",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#428beb",
+    cardSectionHeader: {
+      padding: "8px 12px",
+      backgroundColor: "#d6d6d6",
+      fontSize: ".75rem",
+      textTransform: "uppercase",
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
     },
-  },
-  redButton: {
-    backgroundColor: "#c22b2b",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#e04c4c",
+    simpleButton: {
+      width: 30,
+      height: 30,
+      borderRadius: 999,
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      margin: "0 2.5px",
+      transition: "background-color .05s",
     },
-  },
-});
+    defaultButton: {
+      backgroundColor: "#999999",
+      color: "white",
+      "&:hover": {
+        backgroundColor: "#ababab",
+      },
+    },
+    primaryButton: {
+      backgroundColor: "#2173de",
+      color: "white",
+      "&:hover": {
+        backgroundColor: "#428beb",
+      },
+    },
+    redButton: {
+      backgroundColor: "#c22b2b",
+      color: "white",
+      "&:hover": {
+        backgroundColor: "#e04c4c",
+      },
+    },
+    columnContainer: {
+      display: "flex",
+      [theme.breakpoints.down("md")]: {
+        flexDirection: "column",
+      },
+      [theme.breakpoints.up("md")]: {
+        flexDirection: "row",
+      },
+    },
+    listColumn: {
+      padding: 10,
+      [theme.breakpoints.down("lg")]: {
+        flex: 5,
+      },
+      [theme.breakpoints.up("lg")]: {
+        flex: 1,
+      },
+    },
+    displayColumn: {
+      padding: 10,
+      [theme.breakpoints.down("lg")]: {
+        flex: 3,
+      },
+      [theme.breakpoints.up("lg")]: {
+        flex: 1,
+      },
+    },
+  })
+);
 
 const SimpleButton = ({ children, cssClass, ...props }: any) => {
   const classes = useStyles();
@@ -79,17 +120,22 @@ interface CardItemProps {
   cardName: string;
   cardData: DeckCardData;
   setCardAmount: Function;
+  setDisplayedCard: Function;
 }
 
 const CardItem: React.FC<CardItemProps> = ({
   cardName,
   cardData,
   setCardAmount,
+  setDisplayedCard,
 }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.cardItem}>
+    <div
+      className={classes.cardItem}
+      onMouseEnter={() => setDisplayedCard(cardData.data)}
+    >
       <SimpleButton
         cssClass={classes.redButton}
         onClick={() => {
@@ -151,32 +197,54 @@ interface CardListProps {
 
 const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
   const classes = useStyles();
-  // const numCards = Object.entries(cards)
-  //   .map((card) => card[1].count)
-  //   .reduce((a, b) => a + b, 0);
-
-  const creatures = Object.entries(cards).filter((card) =>
-    card[1].data.card_type.includes("Creature")
+  const [displayedCard, setDisplayedCard] = useState<Card | undefined>(
+    undefined
   );
-  const lands = Object.entries(cards).filter((card) =>
-    card[1].data.card_type.includes("Land")
+  const [creatures, setCreatures] = useState<[string, DeckCardData][]>([]);
+  const [lands, setLands] = useState<[string, DeckCardData][]>([]);
+  const [noncreatures, setNoncreatures] = useState<[string, DeckCardData][]>(
+    []
   );
-  const noncreatures = Object.entries(cards).filter((card) => {
-    const type = card[1].data.card_type;
-    if (type.includes("Creature") || type.includes("Land")) return false;
-    return true;
-  });
-
-  const creatureCount = creatures
-    .map((card) => card[1].count)
-    .reduce((a, b) => a + b, 0);
-  const landCount = lands
-    .map((card) => card[1].count)
-    .reduce((a, b) => a + b, 0);
-  const noncreatureCount = noncreatures
-    .map((card) => card[1].count)
-    .reduce((a, b) => a + b, 0);
+  const [creatureCount, setCreatureCount] = useState(0);
+  const [landCount, setLandCount] = useState(0);
+  const [noncreatureCount, setNoncreatureCount] = useState(0);
   const totalCount = creatureCount + landCount + noncreatureCount;
+
+  useEffect(() => {
+    setCreatures(
+      Object.entries(cards).filter((card) =>
+        card[1].data.card_type.includes("Creature")
+      )
+    );
+    setLands(
+      Object.entries(cards).filter((card) =>
+        card[1].data.card_type.includes("Land")
+      )
+    );
+    setNoncreatures(
+      Object.entries(cards).filter((card) => {
+        const type = card[1].data.card_type;
+        if (type.includes("Creature") || type.includes("Land")) return false;
+        return true;
+      })
+    );
+  }, [cards]);
+
+  useEffect(() => {
+    setCreatureCount(
+      creatures.map((card) => card[1].count).reduce((a, b) => a + b, 0)
+    );
+  }, [creatures]);
+
+  useEffect(() => {
+    setLandCount(lands.map((card) => card[1].count).reduce((a, b) => a + b, 0));
+  }, [lands]);
+
+  useEffect(() => {
+    setNoncreatureCount(
+      noncreatures.map((card) => card[1].count).reduce((a, b) => a + b, 0)
+    );
+  }, [noncreatures]);
 
   const arranged = [
     { name: "Creatures", data: creatures, count: creatureCount },
@@ -192,30 +260,40 @@ const CardList: React.FC<CardListProps> = ({ cards, setCardAmount }) => {
     );
 
   return (
-    <React.Fragment>
-      <div style={{ marginBottom: 10 }}>{totalCount} cards</div>
-      <div className={classes.cardItemContainer}>
-        {arranged.map((entry) => {
-          if (!entry.data.length) return <React.Fragment></React.Fragment>;
-          return (
-            <React.Fragment key={entry.name}>
-              <div className={classes.cardSectionHeader}>
-                <div>{entry.name}</div>
-                <div>{entry.count}</div>
-              </div>
-              {entry.data.map((card) => (
-                <CardItem
-                  key={card[1].data.id}
-                  cardName={card[0]}
-                  cardData={card[1]}
-                  setCardAmount={setCardAmount}
-                />
-              ))}
-            </React.Fragment>
-          );
-        })}
+    <div className={classes.columnContainer}>
+      {/* cards column */}
+      <div className={classes.listColumn}>
+        <div style={{ marginBottom: 10 }}>{totalCount} cards</div>
+        <div className={classes.cardItemContainer}>
+          {arranged.map((entry) => {
+            if (!entry.data.length)
+              return <React.Fragment key={entry.name}></React.Fragment>;
+            return (
+              <React.Fragment key={entry.name}>
+                <div className={classes.cardSectionHeader}>
+                  <div>{entry.name}</div>
+                  <div>{entry.count}</div>
+                </div>
+                {entry.data.map((card) => (
+                  <CardItem
+                    key={card[1].data.id}
+                    cardName={card[0]}
+                    cardData={card[1]}
+                    setCardAmount={setCardAmount}
+                    setDisplayedCard={setDisplayedCard}
+                  />
+                ))}
+              </React.Fragment>
+            );
+          })}
+        </div>
       </div>
-    </React.Fragment>
+
+      {/* card display column */}
+      <div className={classes.displayColumn}>
+        <CardDisplay card={displayedCard} />
+      </div>
+    </div>
   );
 };
 
