@@ -1,5 +1,5 @@
-import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
-import React from "react";
+import { createStyles, makeStyles, Theme, Typography } from '@material-ui/core';
+import React from 'react';
 import {
   Bar,
   BarChart,
@@ -11,32 +11,32 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
-import { DeckCards } from "../models/deckModel";
+} from 'recharts';
+import { DeckCards } from '../models/deckModel';
 
 interface ColorHexes {
   [index: string]: string;
 }
 
 const colorHexes: ColorHexes = {
-  W: "#f0f2c0",
-  U: "#b5cde3",
-  B: "#aca29a",
-  R: "#db8664",
-  G: "#93b483",
-  C: "#beb9b2",
-  Multi: "#a783b4",
+  W: '#f0f2c0',
+  U: '#b5cde3',
+  B: '#aca29a',
+  R: '#db8664',
+  G: '#93b483',
+  C: '#beb9b2',
+  Multi: '#a783b4',
 };
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      display: "flex",
-      [theme.breakpoints.down("md")]: {
-        flexDirection: "column",
+      display: 'flex',
+      [theme.breakpoints.down('md')]: {
+        flexDirection: 'column',
       },
-      [theme.breakpoints.up("md")]: {
-        flexDirection: "row",
+      [theme.breakpoints.up('md')]: {
+        flexDirection: 'row',
       },
     },
     column: {
@@ -66,7 +66,7 @@ const DeckStats: React.FC<Props> = ({ deckList }) => {
   decklistEntries.forEach((card) => {
     const count = card[1].count;
 
-    if (!card[1].data.card_type.includes("Land")) {
+    if (!card[1].data.card_type.includes('Land')) {
       // bar chart
       const cmc = card[1].data.cmc.toString(10);
       const currentCmcCount = barChartData[cmc];
@@ -75,9 +75,9 @@ const DeckStats: React.FC<Props> = ({ deckList }) => {
       //  pie chart
       const numColors = card[1].data.colors.length;
       let color;
-      if (numColors < 1) color = "C";
+      if (numColors < 1) color = 'C';
       else if (numColors === 1) color = card[1].data.colors[0];
-      else color = "Multi";
+      else color = 'Multi';
       const currentColorCount = pieChartData[color];
       pieChartData[color] = currentColorCount
         ? currentColorCount + count
@@ -104,31 +104,41 @@ const DeckStats: React.FC<Props> = ({ deckList }) => {
   return (
     <div className={classes.container}>
       <div className={classes.column}>
-        <Typography align='center' gutterBottom>
+        <Typography align="center" gutterBottom>
           Mana Values
         </Typography>
-        <ResponsiveContainer width='100%' height={250}>
+        <ResponsiveContainer width="100%" height={250}>
           <BarChart data={finalBarChartData}>
             <CartesianGrid />
-            <XAxis dataKey='cmc' />
+            <XAxis dataKey="cmc" />
             <YAxis allowDecimals={false} />
-            <Bar dataKey='count' fill='#93b483' />
+            <Bar dataKey="count" fill="#93b483" />
             <Tooltip />
           </BarChart>
         </ResponsiveContainer>
       </div>
       <div className={classes.column}>
-        <Typography align='center' gutterBottom>
+        <Typography align="center" gutterBottom>
           Colors
         </Typography>
-        <ResponsiveContainer width='100%' height={250}>
+        <ResponsiveContainer width="100%" height={250}>
           <PieChart>
             <Pie
               data={finalPieChartData}
-              dataKey='count'
-              nameKey='color'
-              fill='#b5cde3'
-              label={(entry) => entry.color}
+              dataKey="count"
+              nameKey="color"
+              fill="#b5cde3"
+              label={({ x, y, name }) => (
+                <text
+                  x={x}
+                  y={y}
+                  fill="black"
+                  textAnchor="end"
+                  dominantBaseline="central"
+                >
+                  {name}
+                </text>
+              )}
             >
               {finalPieChartData.map((entry) => (
                 <Cell
