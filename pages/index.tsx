@@ -9,9 +9,10 @@ import CardSearch from '../src/Search';
 
 export default function Index() {
   const [deckList, setDeckList] = useState<DeckCards>({});
+  const [sideboard, setSideboard] = useState<DeckCards>({});
 
-  const setCardAmount = (card: Card, amount: number) => {
-    const newList = { ...deckList };
+  const setAmount = (addToSideboard: boolean, card: Card, amount: number) => {
+    const newList = addToSideboard ? { ...sideboard } : { ...deckList };
 
     if (amount <= 0) {
       delete newList[card.card_name];
@@ -22,13 +23,40 @@ export default function Index() {
       };
     }
 
-    setDeckList(newList);
+    if (addToSideboard) setSideboard(newList);
+    else setDeckList(newList);
+  };
+
+  const setSideboardCardAmount = (card: Card, amount: number) => {
+    setAmount(true, card, amount);
+  };
+
+  const setCardAmount = (card: Card, amount: number) => {
+    setAmount(false, card, amount);
   };
 
   const addCard = (card: Card) => {
     if (deckList[card.card_name])
       setCardAmount(card, deckList[card.card_name].count + 1);
     else setCardAmount(card, 1);
+  };
+
+  const moveToSideboard = (card: Card) => {
+    const newList = { ...deckList };
+    const newSb = { ...sideboard };
+    const mbCount = newList[card.card_name].count;
+
+    delete newList[card.card_name];
+
+    if (newSb[card.card_name]) newSb[card.card_name].count += mbCount;
+    else
+      newSb[card.card_name] = {
+        data: card,
+        count: mbCount,
+      };
+
+    setDeckList(newList);
+    setSideboard(newSb);
   };
 
   return (
@@ -46,7 +74,13 @@ export default function Index() {
         <Typography variant="h6" gutterBottom>
           Decklist
         </Typography>
-        <CardList cards={deckList} setCardAmount={setCardAmount} />
+        <CardList
+          cards={deckList}
+          sideboard={sideboard}
+          setCardAmount={setCardAmount}
+          moveToSideboard={moveToSideboard}
+          setSideboardCardAmount={setSideboardCardAmount}
+        />
       </div>
 
       {/* stats */}
