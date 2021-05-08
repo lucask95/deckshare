@@ -63,14 +63,24 @@ const DeckStats: React.FC<Props> = ({ deckList }) => {
   // { "color": <count>, "B": 12 }
   const pieChartData: any = {};
 
+  let nonlandCount: number = 0;
+  let averageCmc: number = 0;
+
+  // convert the decklist to the format needed by the bar and pie chart
   decklistEntries.forEach((card) => {
     const count = card[1].count;
 
     if (!card[1].data.card_type.includes('Land')) {
       // bar chart
-      const cmc = card[1].data.cmc.toString(10);
-      const currentCmcCount = barChartData[cmc];
-      barChartData[cmc] = currentCmcCount ? currentCmcCount + count : count;
+      const cmc = card[1].data.cmc;
+      const cmcString = cmc.toString(10);
+      const currentCmcCount = barChartData[cmcString];
+      barChartData[cmcString] = currentCmcCount
+        ? currentCmcCount + count
+        : count;
+
+      nonlandCount += count;
+      averageCmc += cmc * count;
 
       //  pie chart
       const numColors = card[1].data.colors.length;
@@ -99,13 +109,13 @@ const DeckStats: React.FC<Props> = ({ deckList }) => {
     };
   });
 
-  console.log(finalPieChartData);
+  averageCmc /= nonlandCount;
 
   return (
     <div className={classes.container}>
       <div className={classes.column}>
         <Typography align="center" gutterBottom>
-          Mana Values
+          Mana Values &ndash; Average: {averageCmc.toFixed(1)}
         </Typography>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={finalBarChartData}>
@@ -128,7 +138,8 @@ const DeckStats: React.FC<Props> = ({ deckList }) => {
               dataKey="count"
               nameKey="color"
               fill="#b5cde3"
-              label={({ x, y, name }) => (
+              labelLine={false}
+              label={({ x, y, name, value }) => (
                 <text
                   x={x}
                   y={y}
@@ -136,7 +147,7 @@ const DeckStats: React.FC<Props> = ({ deckList }) => {
                   textAnchor="end"
                   dominantBaseline="central"
                 >
-                  {name}
+                  {`${name}: ${value}`}
                 </text>
               )}
             >
