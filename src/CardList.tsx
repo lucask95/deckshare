@@ -129,7 +129,7 @@ interface CardItemProps {
   setCardAmount: Function;
   setDisplayedCard: Function;
   swapBoard: Function;
-  isSideboard: boolean;
+  isMainboard: boolean;
 }
 
 const CardItem: React.FC<CardItemProps> = ({
@@ -138,7 +138,7 @@ const CardItem: React.FC<CardItemProps> = ({
   setCardAmount,
   setDisplayedCard,
   swapBoard,
-  isSideboard,
+  isMainboard,
 }) => {
   const classes = useStyles();
 
@@ -177,10 +177,10 @@ const CardItem: React.FC<CardItemProps> = ({
       <SimpleButton
         cssClass={classes.greenButton}
         onClick={() => {
-          swapBoard(cardData.data, isSideboard);
+          swapBoard(cardData.data, isMainboard);
         }}
       >
-        {isSideboard ? "MB" : "SB"}
+        {isMainboard ? "SB" : "MB"}
       </SimpleButton>
 
       {/* <SimpleButton
@@ -329,7 +329,7 @@ const CardList: React.FC<CardListProps> = ({
                     }
                     setDisplayedCard={setDisplayedCard}
                     swapBoard={swapBoard}
-                    isSideboard={entry.name === "Sideboard"}
+                    isMainboard={entry.name !== "Sideboard"}
                   />
                 ))}
               </React.Fragment>
