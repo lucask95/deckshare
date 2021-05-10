@@ -11,9 +11,12 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "*",
     "clsx": "latest",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "mana-font": "^1.10.0",
     "next": "latest",
     "pg": "^8.6.0",
+    "prettier": "^2.2.1",
     "react": "latest",
     "react-dom": "latest",
     "recharts": "^2.0.9"
@@ -31,6 +34,9 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/recharts": "^1.8.19",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "eslint": "^7.26.0",
     "typescript": "latest"
   }
 }
