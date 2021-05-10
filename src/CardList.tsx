@@ -4,107 +4,107 @@ import {
   Typography,
   Theme,
   createStyles,
-} from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
-import Card from '../models/cardModel';
-import { DeckCards, DeckCardData } from '../models/deckModel';
-import CardDisplay from './CardDisplay';
-import Mana from './Mana';
+} from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import Card from "../models/cardModel";
+import { DeckCards, DeckCardData } from "../models/deckModel";
+import CardDisplay from "./CardDisplay";
+import Mana from "./Mana";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     cardItemContainer: {
       borderRadius: 5,
-      border: '1px solid #c4c4c4',
+      border: "1px solid #c4c4c4",
     },
     cardItem: {
       padding: 10,
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderTop: '1px solid #c4c4c4',
-      transition: 'background-color .05s',
-      '&:first-child': {
-        borderTop: 'none',
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      borderTop: "1px solid #c4c4c4",
+      transition: "background-color .05s",
+      "&:first-child": {
+        borderTop: "none",
       },
-      '&:hover': {
-        backgroundColor: '#e8f9ff',
+      "&:hover": {
+        backgroundColor: "#e8f9ff",
       },
     },
     cardSectionHeader: {
-      padding: '8px 12px',
-      backgroundColor: '#d6d6d6',
-      fontSize: '.75rem',
-      textTransform: 'uppercase',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      padding: "8px 12px",
+      backgroundColor: "#d6d6d6",
+      fontSize: ".75rem",
+      textTransform: "uppercase",
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
     },
     simpleButton: {
       width: 30,
       height: 30,
       borderRadius: 7,
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      margin: '0 1.5px',
-      transition: 'background-color .05s',
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      margin: "0 1.5px",
+      transition: "background-color .05s",
     },
     defaultButton: {
-      backgroundColor: '#999999',
-      color: 'white',
-      '&:hover': {
-        backgroundColor: '#ababab',
+      backgroundColor: "#999999",
+      color: "white",
+      "&:hover": {
+        backgroundColor: "#ababab",
       },
     },
     primaryButton: {
-      backgroundColor: '#2173de',
-      color: 'white',
-      '&:hover': {
-        backgroundColor: '#428beb',
+      backgroundColor: "#2173de",
+      color: "white",
+      "&:hover": {
+        backgroundColor: "#428beb",
       },
     },
     redButton: {
-      backgroundColor: '#c22b2b',
-      color: 'white',
-      '&:hover': {
-        backgroundColor: '#e04c4c',
+      backgroundColor: "#c22b2b",
+      color: "white",
+      "&:hover": {
+        backgroundColor: "#e04c4c",
       },
     },
     greenButton: {
-      backgroundColor: '#3c8f52',
-      color: 'white',
-      '&:hover': {
-        backgroundColor: '#3c8f52',
+      backgroundColor: "#3c8f52",
+      color: "white",
+      "&:hover": {
+        backgroundColor: "#3c8f52",
       },
     },
     columnContainer: {
-      display: 'flex',
-      [theme.breakpoints.down('md')]: {
-        flexDirection: 'column',
+      display: "flex",
+      [theme.breakpoints.down("md")]: {
+        flexDirection: "column",
       },
-      [theme.breakpoints.up('md')]: {
-        flexDirection: 'row',
+      [theme.breakpoints.up("md")]: {
+        flexDirection: "row",
       },
     },
     listColumn: {
       padding: 10,
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down("lg")]: {
         flex: 5,
       },
-      [theme.breakpoints.up('lg')]: {
+      [theme.breakpoints.up("lg")]: {
         flex: 1,
       },
     },
     displayColumn: {
       padding: 10,
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down("lg")]: {
         flex: 3,
       },
-      [theme.breakpoints.up('lg')]: {
+      [theme.breakpoints.up("lg")]: {
         flex: 1,
       },
     },
@@ -115,7 +115,7 @@ const SimpleButton = ({ children, cssClass, ...props }: any) => {
   const classes = useStyles();
   return (
     <ButtonBase
-      className={`${classes.simpleButton} ${cssClass ?? ''}`}
+      className={`${classes.simpleButton} ${cssClass ?? ""}`}
       {...props}
     >
       <Typography variant="body1">{children}</Typography>
@@ -128,7 +128,8 @@ interface CardItemProps {
   cardData: DeckCardData;
   setCardAmount: Function;
   setDisplayedCard: Function;
-  moveToSideboard?: Function;
+  swapBoard: Function;
+  isSideboard: boolean;
 }
 
 const CardItem: React.FC<CardItemProps> = ({
@@ -136,7 +137,8 @@ const CardItem: React.FC<CardItemProps> = ({
   cardData,
   setCardAmount,
   setDisplayedCard,
-  moveToSideboard,
+  swapBoard,
+  isSideboard,
 }) => {
   const classes = useStyles();
 
@@ -172,16 +174,14 @@ const CardItem: React.FC<CardItemProps> = ({
         +
       </SimpleButton>
 
-      {moveToSideboard && (
-        <SimpleButton
-          cssClass={classes.greenButton}
-          onClick={() => {
-            moveToSideboard(cardData.data);
-          }}
-        >
-          SB
-        </SimpleButton>
-      )}
+      <SimpleButton
+        cssClass={classes.greenButton}
+        onClick={() => {
+          swapBoard(cardData.data, isSideboard);
+        }}
+      >
+        {isSideboard ? "MB" : "SB"}
+      </SimpleButton>
 
       {/* <SimpleButton
         cssClass={classes.primaryButton}
@@ -192,14 +192,14 @@ const CardItem: React.FC<CardItemProps> = ({
         4
       </SimpleButton> */}
 
-      <div style={{ margin: '0 15px' }}>
+      <div style={{ margin: "0 15px" }}>
         <Typography variant="body1">{cardData.count}</Typography>
       </div>
 
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'space-between',
+          display: "flex",
+          justifyContent: "space-between",
           flex: 1,
         }}
       >
@@ -214,7 +214,7 @@ interface CardListProps {
   cards: DeckCards;
   sideboard: DeckCards;
   setCardAmount: Function;
-  moveToSideboard: Function;
+  swapBoard: Function;
   setSideboardCardAmount: Function;
 }
 
@@ -222,7 +222,7 @@ const CardList: React.FC<CardListProps> = ({
   cards,
   sideboard,
   setCardAmount,
-  moveToSideboard,
+  swapBoard,
   setSideboardCardAmount,
 }) => {
   const classes = useStyles();
@@ -243,18 +243,18 @@ const CardList: React.FC<CardListProps> = ({
   useEffect(() => {
     setCreatures(
       Object.entries(cards).filter((card) =>
-        card[1].data.card_type.includes('Creature')
+        card[1].data.card_type.includes("Creature")
       )
     );
     setLands(
       Object.entries(cards).filter((card) =>
-        card[1].data.card_type.includes('Land')
+        card[1].data.card_type.includes("Land")
       )
     );
     setNoncreatures(
       Object.entries(cards).filter((card) => {
         const type = card[1].data.card_type;
-        if (type.includes('Creature') || type.includes('Land')) return false;
+        if (type.includes("Creature") || type.includes("Land")) return false;
         return true;
       })
     );
@@ -285,11 +285,11 @@ const CardList: React.FC<CardListProps> = ({
   }, [sideboard]);
 
   const arranged = [
-    { name: 'Creatures', data: creatures, count: creatureCount },
-    { name: 'Non-Creatures', data: noncreatures, count: noncreatureCount },
-    { name: 'Lands', data: lands, count: landCount },
+    { name: "Creatures", data: creatures, count: creatureCount },
+    { name: "Non-Creatures", data: noncreatures, count: noncreatureCount },
+    { name: "Lands", data: lands, count: landCount },
     {
-      name: 'Sideboard',
+      name: "Sideboard",
       data: Object.entries(sideboard),
       count: sideboardCount,
     },
@@ -323,14 +323,13 @@ const CardList: React.FC<CardListProps> = ({
                     cardName={card[0]}
                     cardData={card[1]}
                     setCardAmount={
-                      entry.name === 'Sideboard'
+                      entry.name === "Sideboard"
                         ? setSideboardCardAmount
                         : setCardAmount
                     }
                     setDisplayedCard={setDisplayedCard}
-                    moveToSideboard={
-                      entry.name !== 'Sideboard' ? moveToSideboard : undefined
-                    }
+                    swapBoard={swapBoard}
+                    isSideboard={entry.name === "Sideboard"}
                   />
                 ))}
               </React.Fragment>
