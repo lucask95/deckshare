@@ -5,6 +5,7 @@ import { DeckCards } from "../models/deckModel";
 import CardList from "../src/CardList";
 import DeckStats from "../src/DeckStats";
 import Layout from "../src/Layout";
+import SaveAndExport from "../src/SaveAndExport";
 import CardSearch from "../src/Search";
 
 export default function Index() {
@@ -39,24 +40,6 @@ export default function Index() {
     if (deckList[card.card_name])
       setCardAmount(card, deckList[card.card_name].count + 1);
     else setCardAmount(card, 1);
-  };
-
-  const moveToSideboard = (card: Card) => {
-    const newList = { ...deckList };
-    const newSb = { ...sideboard };
-    const mbCount = newList[card.card_name].count;
-
-    delete newList[card.card_name];
-
-    if (newSb[card.card_name]) newSb[card.card_name].count += mbCount;
-    else
-      newSb[card.card_name] = {
-        data: card,
-        count: mbCount,
-      };
-
-    setDeckList(newList);
-    setSideboard(newSb);
   };
 
   const swapBoard = (card: Card, cardIsInMainboard: boolean) => {
@@ -103,9 +86,12 @@ export default function Index() {
 
       {/* cards */}
       <div style={{ flex: 1 }}>
-        <Typography variant="h6" gutterBottom>
-          Decklist
-        </Typography>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography variant="h6" gutterBottom>
+            Decklist
+          </Typography>
+          <SaveAndExport deckList={deckList} sideboard={sideboard} />
+        </div>
         <CardList
           cards={deckList}
           sideboard={sideboard}
