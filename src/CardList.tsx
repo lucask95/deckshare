@@ -130,6 +130,7 @@ interface CardItemProps {
   setDisplayedCard: Function;
   swapBoard: Function;
   isMainboard: boolean;
+  editDisabled?: boolean;
 }
 
 const CardItem: React.FC<CardItemProps> = ({
@@ -139,6 +140,7 @@ const CardItem: React.FC<CardItemProps> = ({
   setDisplayedCard,
   swapBoard,
   isMainboard,
+  editDisabled,
 }) => {
   const classes = useStyles();
 
@@ -147,41 +149,45 @@ const CardItem: React.FC<CardItemProps> = ({
       className={classes.cardItem}
       onMouseEnter={() => setDisplayedCard(cardData.data)}
     >
-      <SimpleButton
-        cssClass={classes.redButton}
-        onClick={() => {
-          setCardAmount(cardData.data, 0);
-        }}
-      >
-        x
-      </SimpleButton>
+      {!editDisabled && (
+        <>
+          <SimpleButton
+            cssClass={classes.redButton}
+            onClick={() => {
+              setCardAmount(cardData.data, 0);
+            }}
+          >
+            x
+          </SimpleButton>
 
-      <SimpleButton
-        cssClass={classes.primaryButton}
-        onClick={() => {
-          setCardAmount(cardData.data, cardData.count - 1);
-        }}
-      >
-        -
-      </SimpleButton>
+          <SimpleButton
+            cssClass={classes.primaryButton}
+            onClick={() => {
+              setCardAmount(cardData.data, cardData.count - 1);
+            }}
+          >
+            -
+          </SimpleButton>
 
-      <SimpleButton
-        cssClass={classes.primaryButton}
-        onClick={() => {
-          setCardAmount(cardData.data, cardData.count + 1);
-        }}
-      >
-        +
-      </SimpleButton>
+          <SimpleButton
+            cssClass={classes.primaryButton}
+            onClick={() => {
+              setCardAmount(cardData.data, cardData.count + 1);
+            }}
+          >
+            +
+          </SimpleButton>
 
-      <SimpleButton
-        cssClass={classes.greenButton}
-        onClick={() => {
-          swapBoard(cardData.data, isMainboard);
-        }}
-      >
-        {isMainboard ? "SB" : "MB"}
-      </SimpleButton>
+          <SimpleButton
+            cssClass={classes.greenButton}
+            onClick={() => {
+              swapBoard(cardData.data, isMainboard);
+            }}
+          >
+            {isMainboard ? "SB" : "MB"}
+          </SimpleButton>
+        </>
+      )}
 
       {/* <SimpleButton
         cssClass={classes.primaryButton}
@@ -216,6 +222,7 @@ interface CardListProps {
   setCardAmount: Function;
   swapBoard: Function;
   setSideboardCardAmount: Function;
+  editDisabled?: boolean;
 }
 
 const CardList: React.FC<CardListProps> = ({
@@ -224,6 +231,7 @@ const CardList: React.FC<CardListProps> = ({
   setCardAmount,
   swapBoard,
   setSideboardCardAmount,
+  editDisabled,
 }) => {
   const classes = useStyles();
   const [displayedCard, setDisplayedCard] = useState<Card | undefined>(
@@ -330,6 +338,7 @@ const CardList: React.FC<CardListProps> = ({
                     setDisplayedCard={setDisplayedCard}
                     swapBoard={swapBoard}
                     isMainboard={entry.name !== "Sideboard"}
+                    editDisabled={editDisabled}
                   />
                 ))}
               </React.Fragment>

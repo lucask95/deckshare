@@ -6,9 +6,14 @@ import serverUrl from "../util/config";
 interface Props {
   deckList: DeckCards;
   sideboard: DeckCards;
+  editDisabled?: boolean;
 }
 
-const SaveAndExport: React.FC<Props> = ({ deckList, sideboard }) => {
+const SaveAndExport: React.FC<Props> = ({
+  deckList,
+  sideboard,
+  editDisabled,
+}) => {
   const handleSubmit = async () => {
     try {
       const body = {
@@ -31,15 +36,17 @@ const SaveAndExport: React.FC<Props> = ({ deckList, sideboard }) => {
 
   return (
     <div>
-      <Button
-        variant="text"
-        color="primary"
-        disableElevation
-        style={{ marginRight: 10 }}
-        onClick={handleSubmit}
-      >
-        Save Deck
-      </Button>
+      {!editDisabled && (
+        <Button
+          variant="text"
+          color="primary"
+          disableElevation
+          style={{ marginRight: 10 }}
+          onClick={handleSubmit}
+        >
+          Save Deck
+        </Button>
+      )}
       <Button variant="text" color="primary" disableElevation>
         Export Deck
       </Button>

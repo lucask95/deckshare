@@ -22,7 +22,8 @@ export type DeckCards = {
  * }
  */
 export type Deck = {
+  id?: number;
   name: string;
-  creationdate: Date;
-  cards: DeckCards;
+  mainboard: DeckCards;
+  sideboard: DeckCards;
 };
