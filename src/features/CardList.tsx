@@ -6,10 +6,10 @@ import {
   createStyles,
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import Card from "../models/cardModel";
-import { DeckCards, DeckCardData } from "../models/deckModel";
-import CardDisplay from "./CardDisplay";
-import Mana from "./Mana";
+import Card from "../../models/cardModel";
+import { DeckCards, DeckCardData } from "../../models/deckModel";
+import CardDisplay from "../components/CardDisplay";
+import Mana from "../components/Mana";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

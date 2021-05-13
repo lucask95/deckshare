@@ -2,11 +2,11 @@ import { Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import Card from "../models/cardModel";
 import { DeckCards } from "../models/deckModel";
-import CardList from "../src/CardList";
-import DeckStats from "../src/DeckStats";
+import CardList from "../src/features/CardList";
+import DeckStats from "../src/features/DeckStats";
 import Layout from "../src/Layout";
-import SaveAndExport from "../src/SaveAndExport";
-import CardSearch from "../src/Search";
+import SaveAndExport from "../src/components/SaveAndExport";
+import CardSearch from "../src/features/Search";
 
 export default function Index() {
   const [deckList, setDeckList] = useState<DeckCards>({});

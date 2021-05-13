@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
-import Card from "../models/cardModel";
+import Card from "../../models/cardModel";
 import Mana from "./Mana";
 
 const useStyles = makeStyles({

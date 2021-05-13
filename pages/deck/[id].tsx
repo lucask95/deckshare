@@ -2,10 +2,10 @@ import { Typography } from "@material-ui/core";
 import { GetServerSideProps } from "next";
 import React from "react";
 import { Deck } from "../../models/deckModel";
-import CardList from "../../src/CardList";
-import DeckStats from "../../src/DeckStats";
+import CardList from "../../src/features/CardList";
+import DeckStats from "../../src/features/DeckStats";
 import Layout from "../../src/Layout";
-import SaveAndExport from "../../src/SaveAndExport";
+import SaveAndExport from "../../src/components/SaveAndExport";
 import serverUrl from "../../util/config";
 
 interface Props {
@@ -13,8 +13,6 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ deck }) => {
-  console.log(`${serverUrl}/api/decks?id=number`, deck);
-
   const mainboard = deck.mainboard ?? {};
   const sideboard = deck.sideboard ?? {};
 

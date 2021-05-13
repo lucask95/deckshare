@@ -7,8 +7,8 @@ import {
 } from "@material-ui/core";
 import Head from "next/head";
 import React from "react";
-import Link from "./Link";
-import Mana from "./Mana";
+import Link from "./components/Link";
+import Mana from "./components/Mana";
 
 interface Props {
   titleAddition?: string;
@@ -63,7 +63,7 @@ const Layout: React.FC<Props> = ({ titleAddition, children }) => {
         <title>
           {`MTG Deck Builder${titleAddition ? " - " + titleAddition : ""}`}
         </title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Container className={classes.rootContainer}>
@@ -101,9 +101,9 @@ const Layout: React.FC<Props> = ({ titleAddition, children }) => {
         <main className={classes.main}>{children}</main>
 
         <footer className={classes.footer}>
-          <Typography variant='caption'>
+          <Typography variant="caption">
             Website by{" "}
-            <Link href='https://lucask95.github.io/'>Lucas Keller</Link>
+            <Link href="https://lucask95.github.io/">Lucas Keller</Link>
           </Typography>
         </footer>
       </Container>

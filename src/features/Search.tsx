@@ -6,9 +6,9 @@ import {
   makeStyles,
   TextField,
 } from "@material-ui/core";
-import useDebounce from "../util/useDebounce";
-import Card from "../models/cardModel";
-import Mana from "./Mana";
+import useDebounce from "../../util/useDebounce";
+import Card from "../../models/cardModel";
+import Mana from "../components/Mana";
 
 interface Props {
   addCard: Function;
@@ -48,7 +48,7 @@ const CardSearch: React.FC<Props> = ({ addCard }) => {
       setIsLoading(false);
     }
 
-    console.log("Debounce time over. Search term:", debouncedSearchTerm);
+    // console.log("Debounce time over. Search term:", debouncedSearchTerm);
     searchForCard();
   }, [debouncedSearchTerm]);
 
@@ -72,7 +72,7 @@ const CardSearch: React.FC<Props> = ({ addCard }) => {
       debug
       loading={isLoading}
       loadingText={
-        <Box display='flex' flexDirection='row' justifyContent='center'>
+        <Box display="flex" flexDirection="row" justifyContent="center">
           <CircularProgress />
         </Box>
       }
@@ -95,9 +95,9 @@ const CardSearch: React.FC<Props> = ({ addCard }) => {
         return (
           <TextField
             {...params}
-            label='Card name'
-            margin='dense'
-            variant='outlined'
+            label="Card name"
+            margin="dense"
+            variant="outlined"
           />
         );
       }}

@@ -1,7 +1,7 @@
 import { Button } from "@material-ui/core";
 import React from "react";
-import { DeckCards } from "../models/deckModel";
-import serverUrl from "../util/config";
+import { DeckCards } from "../../models/deckModel";
+import serverUrl from "../../util/config";
 
 interface Props {
   deckList: DeckCards;
