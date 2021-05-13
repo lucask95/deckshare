@@ -106,7 +106,7 @@ export default function Index() {
         <Typography variant="h6" gutterBottom>
           Statistics
         </Typography>
-        <DeckStats deckList={deckList} />
+        <DeckStats deckList={deckList} sideboard={sideboard} />
       </div>
     </Layout>
   );

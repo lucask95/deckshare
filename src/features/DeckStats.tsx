@@ -48,12 +48,13 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface Props {
   deckList: DeckCards;
+  sideboard: DeckCards;
 }
 
-const DeckStats: React.FC<Props> = ({ deckList }) => {
+const DeckStats: React.FC<Props> = ({ deckList, sideboard }) => {
   const classes = useStyles();
 
-  const decklistEntries = Object.entries(deckList);
+  const decklistEntries = Object.entries({ ...deckList, ...sideboard });
 
   if (!decklistEntries.length) return <React.Fragment></React.Fragment>;
 

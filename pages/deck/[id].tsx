@@ -45,7 +45,7 @@ const Home: React.FC<Props> = ({ deck }) => {
         <Typography variant="h6" gutterBottom>
           Statistics
         </Typography>
-        <DeckStats deckList={mainboard} />
+        <DeckStats deckList={mainboard} sideboard={sideboard} />
       </div>
     </Layout>
   );
