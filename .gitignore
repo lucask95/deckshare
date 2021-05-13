@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/certificates
 
 # misc
 .DS_Store
