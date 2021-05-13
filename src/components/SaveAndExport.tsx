@@ -1,8 +1,26 @@
-import { Button } from "@material-ui/core";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  makeStyles,
+} from "@material-ui/core";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { DeckCards } from "../../models/deckModel";
 import serverUrl from "../../util/config";
+
+const useStyles = makeStyles({
+  dialogContent: {
+    padding: "0 20px 0px 20px",
+  },
+  dialogUrlDisplay: {
+    border: "1px solid #c4c4c4",
+    borderRadius: 5,
+    padding: "8px 16px",
+  },
+});
 
 interface Props {
   deckList: DeckCards;
@@ -15,8 +33,10 @@ const SaveAndExport: React.FC<Props> = ({
   sideboard,
   editDisabled,
 }) => {
+  const classes = useStyles();
   const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
@@ -42,7 +62,45 @@ const SaveAndExport: React.FC<Props> = ({
 
   return (
     <div>
-      {!editDisabled && (
+      <Dialog
+        open={isPopupOpen}
+        onClose={() => {
+          setIsPopupOpen(false);
+        }}
+      >
+        <DialogTitle>Share Deck</DialogTitle>
+        <DialogContent className={classes.dialogContent}>
+          <div className={classes.dialogUrlDisplay}>
+            {`${serverUrl}${router.asPath}`}
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            variant="text"
+            color="primary"
+            style={{ marginRight: 10 }}
+            onClick={() => {
+              navigator.clipboard.writeText(`${serverUrl}${router.asPath}`);
+              setIsPopupOpen(false);
+            }}
+          >
+            Copy Link
+          </Button>
+        </DialogActions>
+      </Dialog>
+      {editDisabled ? (
+        <Button
+          variant="text"
+          color="primary"
+          disableElevation
+          style={{ marginRight: 10 }}
+          onClick={() => {
+            setIsPopupOpen(true);
+          }}
+        >
+          Share Deck
+        </Button>
+      ) : (
         <Button
           variant="text"
           color="primary"
