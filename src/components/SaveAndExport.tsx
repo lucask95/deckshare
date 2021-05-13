@@ -5,7 +5,9 @@ import {
   DialogContent,
   DialogTitle,
   makeStyles,
+  Snackbar,
 } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { DeckCards } from "../../models/deckModel";
@@ -36,7 +38,8 @@ const SaveAndExport: React.FC<Props> = ({
   const classes = useStyles();
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
@@ -63,9 +66,9 @@ const SaveAndExport: React.FC<Props> = ({
   return (
     <div>
       <Dialog
-        open={isPopupOpen}
+        open={isDialogOpen}
         onClose={() => {
-          setIsPopupOpen(false);
+          setIsDialogOpen(false);
         }}
       >
         <DialogTitle>Share Deck</DialogTitle>
@@ -81,13 +84,23 @@ const SaveAndExport: React.FC<Props> = ({
             style={{ marginRight: 10 }}
             onClick={() => {
               navigator.clipboard.writeText(`${serverUrl}${router.asPath}`);
-              setIsPopupOpen(false);
+              setIsDialogOpen(false);
+              setIsSnackbarOpen(true);
             }}
           >
             Copy Link
           </Button>
         </DialogActions>
       </Dialog>
+      <Snackbar
+        open={isSnackbarOpen}
+        autoHideDuration={3000}
+        onClose={() => {
+          setIsSnackbarOpen(false);
+        }}
+      >
+        <Alert severity="info">Link copied to clipboard.</Alert>
+      </Snackbar>
       {editDisabled ? (
         <Button
           variant="text"
@@ -95,7 +108,7 @@ const SaveAndExport: React.FC<Props> = ({
           disableElevation
           style={{ marginRight: 10 }}
           onClick={() => {
-            setIsPopupOpen(true);
+            setIsDialogOpen(true);
           }}
         >
           Share Deck
