@@ -9,6 +9,7 @@ import {
 import useDebounce from "../../util/useDebounce";
 import Card from "../../models/cardModel";
 import Mana from "../components/Mana";
+import serverUrl from "../../util/config";
 
 interface Props {
   addCard: Function;
@@ -38,7 +39,7 @@ const CardSearch: React.FC<Props> = ({ addCard }) => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:3000/api/search/${debouncedSearchTerm}`
+          `${serverUrl}/api/search/${debouncedSearchTerm}`
         );
         const results = await response.json();
         setCardOptions(results);
