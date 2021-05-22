@@ -23,11 +23,18 @@ const useStyles = makeStyles({
     alignItems: "center",
     width: "100%",
   },
+  labelSpan: {
+    padding: "3px 6px",
+    borderRadius: 2,
+    backgroundColor: "lightgray",
+    marginRight: 5,
+    fontSize: ".8rem",
+  },
 });
 
 const CardSearch: React.FC<Props> = ({ addCard }) => {
   const classes = useStyles();
-  const [cardOptions, setCardOptions] = useState([]);
+  const [cardOptions, setCardOptions] = useState<Card[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const debouncedSearchTerm = useDebounce(inputValue, 500);
@@ -79,11 +86,23 @@ const CardSearch: React.FC<Props> = ({ addCard }) => {
       }
       options={cardOptions ?? []}
       getOptionLabel={(option: any) => option?.["card_name"]}
-      renderOption={(option: any) => {
+      renderOption={(option: Card) => {
+        if (!option) return <React.Fragment></React.Fragment>;
+
+        let mana: any;
+
+        if (option.mana_cost === "") {
+          if (option.card_type.includes("Land"))
+            mana = <span className={classes.labelSpan}>Land</span>;
+          else mana = <span className={classes.labelSpan}>No Cost</span>;
+        } else {
+          mana = <Mana manaCost={option?.mana_cost} />;
+        }
+
         return (
           <div className={classes.optionDiv}>
-            <div>{option?.["card_name"]}</div>
-            <Mana manaCost={option?.["mana_cost"]} />
+            <div>{option?.card_name}</div>
+            {mana}
           </div>
         );
       }}

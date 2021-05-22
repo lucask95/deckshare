@@ -15,7 +15,7 @@ const Mana: React.FC<Props> = ({ manaCost, inline }) => {
     <i
       key={index}
       className={`ms ms-cost ms-shadow ms-${symbol}`}
-      style={{ margin: "1px" }}
+      style={{ margin: "1.5px" }}
     />
   ));
 
