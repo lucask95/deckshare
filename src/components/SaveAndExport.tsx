@@ -125,9 +125,9 @@ const SaveAndExport: React.FC<Props> = ({
           Save Deck
         </Button>
       )}
-      <Button variant="text" color="primary" disableElevation>
+      {/* <Button variant="text" color="primary" disableElevation>
         Export Deck
-      </Button>
+      </Button> */}
     </div>
   );
 };
