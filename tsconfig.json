@@ -3,7 +3,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2017", "es2020.string"],
+    "lib": ["dom", "es2017", "es2020.string", "ESNext.string"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,

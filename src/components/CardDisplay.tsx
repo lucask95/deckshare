@@ -13,7 +13,61 @@ const useStyles = makeStyles({
   textArea: {
     marginBottom: 10,
   },
+  paragraph: {
+    marginBottom: 7,
+  },
 });
+
+interface CardTextProps {
+  cardText: string;
+}
+
+/**
+ * Converts a single string of card oracle text to formatted text with mana symbols inserted.
+ */
+const ParsedCardText: React.FC<CardTextProps> = ({ cardText }) => {
+  const classes = useStyles();
+
+  return (
+    <>
+      {cardText.split("\n").map((text, index) => {
+        const symbolregex = /{([^}]+)}/g;
+        /**
+         * Instead of splitting on {} and re-adding them, there is a way to use positive lookahead so we don't
+         * have to do the jank "JSX:" thing, but we can figure that out another time
+         * https://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
+         */
+        const newText: any[] = text
+          .replaceAll(symbolregex, "{JSX:$1}")
+          .split(/[{}]/)
+          .map((value) => {
+            if (!value.startsWith("JSX:")) return value;
+            let substr = value.substring(4);
+            switch (substr) {
+              case "T":
+                substr = "tap";
+                break;
+
+              case "Q":
+                substr = "untap";
+                break;
+
+              default:
+                break;
+            }
+            const cost = `{${substr}}`;
+            return <Mana manaCost={cost} inline />;
+          });
+
+        return (
+          <div key={index} className={classes.paragraph}>
+            {newText}
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
 interface Props {
   card?: Card;
@@ -35,9 +89,7 @@ const CardDisplay: React.FC<Props> = ({ card }) => {
       </div>
       <div className={classes.textArea}>{card.card_type}</div>
       <div className={classes.textArea}>
-        {card.oracle_text.split("\n").map((text, index) => (
-          <p key={index}>{text}</p>
-        ))}
+        <ParsedCardText cardText={card.oracle_text} />
       </div>
     </div>
   );
