@@ -14,6 +14,18 @@ import {
 } from "recharts";
 import { DeckCards } from "../../models/deckModel";
 
+const formats: string[] = [
+  "brawl",
+  "commander",
+  "historic",
+  "legacy",
+  "modern",
+  "pauper",
+  "pioneer",
+  "standard",
+  "vintage",
+];
+
 interface ColorHexes {
   [index: string]: string;
 }
@@ -43,6 +55,12 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: 10,
       flex: 1,
     },
+    formatSpan: {
+      padding: "5px 10px",
+      borderRadius: 2,
+      backgroundColor: "lightgray",
+      marginRight: 5,
+    },
   })
 );
 
@@ -53,7 +71,6 @@ interface Props {
 
 const DeckStats: React.FC<Props> = ({ deckList, sideboard }) => {
   const classes = useStyles();
-
   const decklistEntries = Object.entries({ ...deckList, ...sideboard });
 
   if (!decklistEntries.length) return <React.Fragment></React.Fragment>;
@@ -66,12 +83,19 @@ const DeckStats: React.FC<Props> = ({ deckList, sideboard }) => {
 
   let nonlandCount: number = 0;
   let averageCmc: number = 0;
+  let legalFormats: string[] = formats;
 
   // convert the decklist to the format needed by the bar and pie chart
+  // there is probably a more elegant way to do this
   decklistEntries.forEach((card) => {
-    const count = card[1].count;
+    const cardFormats: string[] = card[1].data.legalities;
+    legalFormats = legalFormats.filter((format) =>
+      cardFormats.includes(format)
+    );
 
     if (!card[1].data.card_type.includes("Land")) {
+      const count = card[1].count;
+
       // bar chart
       const cmc = card[1].data.cmc;
       const cmcString = cmc.toString(10);
@@ -110,59 +134,75 @@ const DeckStats: React.FC<Props> = ({ deckList, sideboard }) => {
     };
   });
 
-  averageCmc /= nonlandCount;
+  averageCmc = nonlandCount > 0 ? averageCmc / nonlandCount : 0;
 
   return (
-    <div className={classes.container}>
-      <div className={classes.column}>
-        <Typography align="center" gutterBottom>
-          Mana Values &ndash; Average: {averageCmc.toFixed(1)}
+    <>
+      <div style={{ margin: "15px 0px" }}>
+        <Typography>
+          Legal in{" "}
+          {legalFormats.length > 0 ? (
+            legalFormats.map((format) => (
+              <span className={classes.formatSpan} key={format}>
+                {format}
+              </span>
+            ))
+          ) : (
+            <span className={classes.formatSpan}>casual</span>
+          )}
         </Typography>
-        <ResponsiveContainer width="100%" height={250}>
-          <BarChart data={finalBarChartData}>
-            <CartesianGrid />
-            <XAxis dataKey="cmc" />
-            <YAxis allowDecimals={false} />
-            <Bar dataKey="count" fill="#93b483" />
-            <Tooltip />
-          </BarChart>
-        </ResponsiveContainer>
       </div>
-      <div className={classes.column}>
-        <Typography align="center" gutterBottom>
-          Colors
-        </Typography>
-        <ResponsiveContainer width="100%" height={250}>
-          <PieChart>
-            <Pie
-              data={finalPieChartData}
-              dataKey="count"
-              nameKey="color"
-              fill="#b5cde3"
-              labelLine={false}
-              label={({ x, y, name, value }) => (
-                <text
-                  x={x}
-                  y={y}
-                  fill="black"
-                  textAnchor="end"
-                  dominantBaseline="central"
-                >
-                  {`${name}: ${value}`}
-                </text>
-              )}
-            >
-              {finalPieChartData.map((entry) => (
-                <Cell
-                  key={`cell-${entry.color}`}
-                  fill={colorHexes[entry.color]}
-                />
-              ))}
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
+      <div className={classes.container}>
+        <div className={classes.column}>
+          <Typography align="center" gutterBottom>
+            Mana Values &ndash; Average: {averageCmc.toFixed(1)}
+          </Typography>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={finalBarChartData}>
+              <CartesianGrid />
+              <XAxis dataKey="cmc" />
+              <YAxis allowDecimals={false} />
+              <Bar dataKey="count" fill="#93b483" />
+              <Tooltip />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className={classes.column}>
+          <Typography align="center" gutterBottom>
+            Colors
+          </Typography>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Pie
+                data={finalPieChartData}
+                dataKey="count"
+                nameKey="color"
+                fill="#b5cde3"
+                labelLine={false}
+                label={({ x, y, name, value }) => (
+                  <text
+                    x={x}
+                    y={y}
+                    fill="black"
+                    textAnchor="end"
+                    dominantBaseline="central"
+                  >
+                    {`${name}: ${value}`}
+                  </text>
+                )}
+              >
+                {finalPieChartData.map((entry) => (
+                  <Cell
+                    key={`cell-${entry.color}`}
+                    fill={colorHexes[entry.color]}
+                  />
+                ))}
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
