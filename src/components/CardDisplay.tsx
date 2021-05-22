@@ -37,7 +37,7 @@ const ParsedCardText: React.FC<CardTextProps> = ({ cardText }) => {
          * have to do the jank "JSX:" thing, but we can figure that out another time
          * https://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
          */
-        const newText: any[] = text
+        const newText: (string | JSX.Element)[] = text
           .replaceAll(symbolregex, "{JSX:$1}")
           .split(/[{}]/)
           .map((value) => {
